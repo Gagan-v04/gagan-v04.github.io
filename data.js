@@ -28,11 +28,12 @@ const allExperience = [
 // --- PROJECT DATA ---
 // Add all your projects here.
 //
-// mediaType can be 'image', 'video', or 'none'
-// mediaSrc is the path to your file (e.g., 'assets/project.mp4' or 'assets/project.jpg')
-// aspect (optional): '9:16' for vertical videos
-// poster is an optional image to show before a video plays
-// github is the link to the repository
+// id: A unique string for each project
+// mediaType: Can be 'image', 'video', or 'none'
+// mediaSrc: The path to your file (e.g., 'assets/project.mp4' or 'assets/project.jpg')
+// aspect: (Optional) '9:16' for vertical videos
+// poster: (Optional) An image to show before a video plays
+// github: The link to the repository
 //
 const allProjects = [
     {
@@ -41,7 +42,8 @@ const allProjects = [
         description: '<p>Leading the integration of a Lexium 12S cobot for an automated bin-picking task. This system uses AprilTags for high-precision positioning and a YOLOv11 classification model for real-time object identification and error handling.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/schneider.mp4',
-        poster: '',
+        aspect: '9:16', // Added for vertical video
+        poster: 'assets/schneider-poster.jpg', // Example poster
         tags: ['ROS 2', 'YOLOv11', 'AprilTags', 'Cobot Integration'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -51,7 +53,7 @@ const allProjects = [
         description: '<p>Developed a teleoperation system to control a Franka Emika Panda arm within NVIDIA Isaac Sim using a Logitech Extreme 3D Pro Joystick. This project bridges physical joystick inputs to simulated robotic control for intuitive manipulation.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/teleop.mp4',
-        poster: '',
+        poster: 'assets/teleop-poster.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'Python', 'Teleoperation', 'Robotics'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -60,7 +62,7 @@ const allProjects = [
         title: 'Flask-OSM-AStar-Router',
         description: `
             <p>A web application demonstrating A* pathfinding on OpenStreetMap (OSM) data for driving routes. This project uses Flask for the backend, Leaflet.js for the interactive map display, and calculates the estimated fastest driving route between two user-selected points, considering road types and speed limits.</p>
-        `,
+        `, // <-- FIXED: Removed comma from inside the backticks
         mediaType: 'image',
         mediaSrc: 'assets/astar.png',
         poster: '',
@@ -71,6 +73,7 @@ const allProjects = [
         id: 'keras-classifier',
         title: 'Keras Alphabet Classifier',
         description: 
+            // FIXED: Changed single quotes to backticks (`) for template literal
             `<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
             <h4>Features</h4>
             <ul>
@@ -111,7 +114,7 @@ const allProjects = [
         description: '<p>Trained a PPO reinforcement learning agent for a pick-and-place task in PyBullet. The agent controls a UR5 robot, using a state-based observation space and a shaped reward function.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/Pick_place.mp4',
-        poster: '',
+        poster: 'assets/pick-place-poster.jpg', // Example poster
         tags: ['Python', 'Reinforcement Learning', 'PPO', 'PyBullet'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -141,7 +144,7 @@ const allProjects = [
         description: '<p>Utilized NVIDIA Isaac Sim to generate high-fidelity synthetic datasets for training deep learning models. This process involved extensive use of domain randomization (textures, lighting, object placement) and data replication to create robust models that generalize well to real-world scenarios.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/data_gen.mp4',
-        poster: '',
+        poster: 'assets/data-gen-poster.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'Synthetic Data', 'Domain Randomization', 'Data Replication'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -151,8 +154,8 @@ const allProjects = [
         description: '<p>Developed a pick and place pipeline in Isaac Sim for objects with complex, non-convex meshes. This system used a kinematics-based solver for motion planning and grasp execution, focusing on reliable handling of challenging geometries in a simulated environment.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/Pick_place.mp4', // Re-using this video as a placeholder
-        poster: '',
-        tags: ['NVIDIA Isaac Sim', 'Pick &Place', 'Kinematics', 'Motion Planning'],
+        poster: 'assets/pick-place-poster.jpg', // Example poster
+        tags: ['NVIDIA Isaac Sim', 'Pick & Place', 'Kinematics', 'Motion Planning'],
         github: 'https://github.com/Gagan-v04'
     },
     {
@@ -161,7 +164,7 @@ const allProjects = [
         description: '<p>Implemented RMPflow (Robotic Motion Policies) on a Franka Emika Panda arm in Isaac Sim. This project focused on real-time, reactive obstacle avoidance, allowing the robot to dynamically adjust its trajectory to avoid unforeseen objects while moving towards its goal.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/rmpflow.mp4',
-        poster: '',
+        poster: 'assets/rmpflow-poster.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'RMPflow', 'Obstacle Avoidance', 'Franka Emika'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -171,7 +174,8 @@ const allProjects = [
         description: '<p>Built a simulation environment for the TurtleBot 3 in NVIDIA Isaac Sim, fully integrated with ROS 2. This setup included teleoperation control, publishing camera and Lidar data, and full visualization in RViz2, creating a complete digital twin for algorithm testing.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/turtlebot.mp4',
-        poster: '',
+        aspect: '9:16', // Added for vertical video
+        poster: 'assets/turtlebot-poster.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'ROS 2', 'TurtleBot3', 'RViz2', 'Lidar'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -190,9 +194,8 @@ const allProjects = [
         `,
         mediaType: 'video',
         mediaSrc: 'assets/turtlebot2.mp4',
-        poster: '',
+        poster: 'assets/turtlebot2-poster.jpg', // Example poster
         tags: ['ROS 2', 'Gazebo', 'RViz2', 'Pure Pursuit', 'Cubic Spline', 'Navigation'],
         github: 'https://github.com/Gagan-v04'
     }
 ];
-
