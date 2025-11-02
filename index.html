@@ -91,6 +91,8 @@
         /* Project Media */
         .project-media {
             width: 100%;
+            height: 500px; /* Set a fixed height */
+            max-height: 500px; /* Enforce a max height */
             border-radius: 0.5rem;
             border: 1px solid #DEE2E6;
             margin-bottom: 1.5rem;
@@ -98,19 +100,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 300px;
             color: #6C757D;
             overflow: hidden; /* Ensure video/img corners are rounded */
         }
         .project-media video {
             width: 100%;
+            height: 100%; /* Fill the container */
             border-radius: 0.5rem;
+            object-fit: cover; /* This will zoom and crop 9:16 videos */
         }
         .project-media img {
             width: 100%;
+            height: 100%; /* Fill the container */
             border-radius: 0.5rem;
             object-fit: cover;
-            max-height: 500px;
         }
         
         /* Project description formatting */
