@@ -43,7 +43,7 @@ const allProjects = [
         mediaType: 'video',
         mediaSrc: 'assets/schneider.mp4',
         aspect: '9:16', // Added for vertical video
-        poster: 'assets/schneider-poster.jpg', // Example poster
+        poster: 'assets/schneider.jpg', // Example poster
         tags: ['ROS 2', 'YOLOv11', 'AprilTags', 'Cobot Integration'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -53,7 +53,7 @@ const allProjects = [
         description: '<p>Developed a teleoperation system to control a Franka Emika Panda arm within NVIDIA Isaac Sim using a Logitech Extreme 3D Pro Joystick. This project bridges physical joystick inputs to simulated robotic control for intuitive manipulation.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/teleop.mp4',
-        poster: 'assets/teleop-poster.jpg', // Example poster
+        poster: 'assets/teleop.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'Python', 'Teleoperation', 'Robotics'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -144,7 +144,7 @@ const allProjects = [
         description: '<p>Utilized NVIDIA Isaac Sim to generate high-fidelity synthetic datasets for training deep learning models. This process involved extensive use of domain randomization (textures, lighting, object placement) and data replication to create robust models that generalize well to real-world scenarios.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/data_gen.mp4',
-        poster: 'assets/data-gen-poster.jpg', // Example poster
+        poster: 'assets/data_gen.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'Synthetic Data', 'Domain Randomization', 'Data Replication'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -154,7 +154,7 @@ const allProjects = [
         description: '<p>Developed a pick and place pipeline in Isaac Sim for objects with complex, non-convex meshes. This system used a kinematics-based solver for motion planning and grasp execution, focusing on reliable handling of challenging geometries in a simulated environment.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/Pick_place.mp4', // Re-using this video as a placeholder
-        poster: 'assets/pick-place-poster.jpg', // Example poster
+        poster: 'assets/Pick_place.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'Pick & Place', 'Kinematics', 'Motion Planning'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -164,7 +164,7 @@ const allProjects = [
         description: '<p>Implemented RMPflow (Robotic Motion Policies) on a Franka Emika Panda arm in Isaac Sim. This project focused on real-time, reactive obstacle avoidance, allowing the robot to dynamically adjust its trajectory to avoid unforeseen objects while moving towards its goal.</p>',
         mediaType: 'video',
         mediaSrc: 'assets/rmpflow.mp4',
-        poster: 'assets/rmpflow-poster.jpg', // Example poster
+        poster: 'assets/rmpflow.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'RMPflow', 'Obstacle Avoidance', 'Franka Emika'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -175,7 +175,7 @@ const allProjects = [
         mediaType: 'video',
         mediaSrc: 'assets/turtlebot.mp4',
         aspect: '9:16', // Added for vertical video
-        poster: 'assets/turtlebot-poster.jpg', // Example poster
+        poster: 'assets/turtlebot.jpg', // Example poster
         tags: ['NVIDIA Isaac Sim', 'ROS 2', 'TurtleBot3', 'RViz2', 'Lidar'],
         github: 'https://github.com/Gagan-v04'
     },
@@ -194,7 +194,7 @@ const allProjects = [
         `,
         mediaType: 'video',
         mediaSrc: 'assets/turtlebot2.mp4',
-        poster: 'assets/turtlebot2-poster.jpg', // Example poster
+        poster: 'assets/turtlebot2.jpg', // Example poster
         tags: ['ROS 2', 'Gazebo', 'RViz2', 'Pure Pursuit', 'Cubic Spline', 'Navigation'],
         github: 'https://github.com/Gagan-v04'
     }
