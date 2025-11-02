@@ -1,250 +1,224 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Projects - Gagan V</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-        <style>
-        /* Base styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA; /* Light gray background */
-            color: #212529; /* Dark text */
-        }
-        .text-accent { color: #007BFF; }
-        .bg-accent { background-color: #007BFF; }
-        .border-accent { border-color: #007BFF; }
-        .light-nav {
-            background-color: rgba(248, 249, 250, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid #DEE2E6;
-        }
-        .section-heading::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #007BFF;
-            margin-top: 8px;
-        }
-        .tech-tag {
-            background-color: #E9ECEF;
-            color: #495057;
-            font-weight: 500;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 2rem;
-            border-left: 2px solid #DEE2E6;
-        }
-        .timeline-item:last-child {
-            border-left-color: transparent;
-            padding-bottom: 0;
-        }
-        .timeline-marker {
-            position: absolute;
-            left: -0.5rem;
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #007BFF;
-            border: 3px solid #F8F9FA;
-        }
-        .project-media {
-            width: 100%;
-            border-radius: 0.5rem;
-            border: 1px solid #DEE2E6;
-            margin-bottom: 1.5rem;
-            background-color: #E9ECEF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-            color: #6C757D;
-            overflow: hidden;
-        }
-        .project-media video {
-            width: 100%;
-            border-radius: 0.5rem;
-        }
-        .project-media img {
-            width: 100%;
-            border-radius: 0.5rem;
-            object-fit: cover;
-            max-height: 500px;
-        }
-        .project-description {
-            color: #495057;
-            line-height: 1.6;
-        }
-        .project-description h4 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #343A40;
-            margin-top: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        .project-description ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .project-description li {
-            margin-bottom: 0.25rem;
-        }
-        .project-description code {
-            font-family: monospace;
-            background-color: #E9ECEF;
-            padding: 0.1rem 0.3rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Archive | Gagan V</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA; /* Light gray background */
+            color: #212529; /* Dark text */
+        }
+
+        /* Custom accent color (a subtle, professional blue) */
+        .text-accent {
+            color: #007BFF;
+        }
+        .bg-accent {
+            background-color: #007BFF;
+        }
+        .border-accent {
+            border-color: #007BFF;
+        }
+        
+        /* Light Navbar */
+        .light-nav {
+            background-color: rgba(248, 249, 250, 0.8); /* Light gray with 80% opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid #DEE2E6; /* Light border */
+        }
+
+        /* Section heading line */
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #007BFF; /* Accent color */
+            margin-top: 8px;
+        }
+        
+        /* Tech Tag */
+        .tech-tag {
+            background-color: #E9ECEF; /* Light gray */
+            color: #495057; /* Darker gray text */
+            font-weight: 500;
+        }
+        
+        /* Project Media */
+        .project-media {
+            width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid #DEE2E6;
+            margin-bottom: 1.5rem;
+            background-color: #E9ECEF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            color: #6C757D;
+            overflow: hidden; /* Ensure video/img corners are rounded */
+        }
+        .project-media video {
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+        .project-media img {
+            width: 100%;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            max-height: 500px;
+        }
+        
+        /* Project description formatting */
+        .project-description {
+            color: #495057; /* gray-700 */
+            line-height: 1.6;
+        }
+        .project-description h4 {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: #343A40; /* gray-800 */
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-description ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-description li {
+            margin-bottom: 0.25rem;
+        }
+        .project-description code {
+            font-family: monospace;
+            background-color: #E9ECEF;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body class="antialiased">
 
-            <header class="light-nav sticky top-0 z-50">
-        <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
-                        <a href="index.html" class="text-2xl font-bold text-gray-900">
-                Gagan V<span class="text-accent">.</span>
-            </a>
-            
-                        <button id="mobile-nav-toggle" class="md:hidden text-gray-900 z-50">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-            
-                        <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html#about" class="text-gray-700 hover:text-accent transition duration-300">About</a>
-                <a href="index.html#experience" class="text-gray-700 hover:text-accent transition duration-300">Experience</a>
-                <a href="#" class="text-accent font-semibold">Projects</a>
-                <a href="index.html#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
-                    Contact
-                </a>
-            </div>
-        </nav>
-        
-                <div id="mobile-nav-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-gray-50 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="index.html#about" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">About</a>
-                <a href="index.html#experience" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Experience</a>
-                <a href="#" class="text-2xl text-accent font-semibold mobile-link">Projects</a>
-                <a href="index.html#contact" class="text-2xl px-6 py-3 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300 mobile-link">
-                    Contact
-                </a>
-            </div>
-        </div>
-    </header>
+    <!-- Header & Navigation -->
+    <header class="light-nav sticky top-0 z-50">
+        <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="index.html" class="text-2xl font-bold text-gray-900">
+                Gagan V<span class="text-accent">.</span>
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-accent transition duration-300">Home</a>
+                <a href="index.html#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
+                    Contact
+                </a>
+            </div>
+        </nav>
+    </header>
 
-        <main class="container mx-auto max-w-4xl px-6">
+    <!-- Main Content -->
+    <main class="container mx-auto max-w-4xl px-6">
 
-                        <section id="projects" class="py-24 pt-32 reveal">
-            <div class="max-w-3xl">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16">
-                    <h2 class="section-heading text-3xl font-bold text-gray-900 mb-4 md:mb-0">
-                        All Projects
-                    </h2>
-                    <a href="index.html" class="text-accent font-medium hover:underline transition duration-300">
-                        &larr; Back to Home
-                    </a>
-                </div>
-                
-          S                     <div id="all-projects-container" class="space-y-20">
-                                    </div>
+        <!-- Projects Section -->
+        <section id="projects" class="py-24">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Project Archive</h1>
+                <p class="text-lg text-gray-600 leading-relaxed mb-12">A complete list of my technical projects. <a href="index.html" class="text-accent font-medium hover:underline">&larr; Back to home</a></p>
+                
+                <!-- Project Feed Container -->
+                <div id="project-feed" class="space-y-20">
+                    <!-- All projects will be dynamically injected here by data.js -->
+                </div>
+            </div>
+        </section>
 
-            </div>
-        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-200">
+        <div class="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row justify-between items-center text-gray-500">
+            <!-- Social Links -->
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/gaganv20" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            <p class="text-sm">
+                Designed & Built by Gagan V
+            </p>
+        </div>
+    </footer>
 
-    </main>
-    
-        <footer class="py-8 border-t border-gray-200">
-        <div class="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row justify-between items-center text-gray-500">
-                        <div class="flex space-x-6 mb-4 md:mb-0">
-                <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/gaganv20" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-            </div>
-            <p class="text-sm">
-                Designed & Built by Gagan V
-            </p>
-        </div>
-    </footer>
+    <!-- Data Script -->
+    <script src="data.js"></script>
 
-        <script src="projects.js"></script>
-    
-    <script>
-        // --- 1. RENDER DYNAMIC CONTENT ---
-        (function() {
-            // Render ALL projects into the container
-            renderProjects('#all-projects-container', allProjects);
-        })();
+    <!-- Main Render Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('project-feed');
+            if (!container || typeof allProjects === 'undefined') return;
 
-        // --- 2. ORIGINAL SCRIPT (Mobile Nav) ---
-        const navToggle = document.getElementById('mobile-nav-toggle');
-        const navMenu = document.getElementById('mobile-nav-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+            // On this page, we render ALL projects
+            container.innerHTML = renderProjectHTML(allProjects);
+        });
 
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('-translate-x-full');
-                // Toggle hamburger icon to X
-                if (navMenu.classList.contains('-translate-x-full')) {
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
-                } else {
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
-                }
-            });
+        function renderProjectHTML(projectList) {
+            let html = '';
+            projectList.forEach(project => {
+                html += `
+                    <article>
+                        ${createMediaBlock(project)}
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">${project.title}</h3>
+                        <div class="text-gray-600 leading-relaxed mb-4 project-description">
+                            ${project.description}
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${project.tags.map(tag => `<span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">${tag}</span>`).join('')}
+                        </div>
+                        ${project.github ? `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>` : ''}
+                    </article>
+                `;
+            });
+            return html;
+        }
 
-            // Close menu when a link is clicked
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    // On this page, links don't need to close the menu
-                    // unless they are navigating away.
-                    if (link.getAttribute('href') !== '#') {
-                        navMenu.classList.add('-translate-x-full');
-                        navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
-                    }
-                });
-            });
-        }
-
-        // --- 3. ORIGINAL SCRIPT (Scroll Reveal) ---
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        });
-
-        revealElements.forEach(el => {
-            observer.observe(el);
-        });
-
-    </script>
+        function createMediaBlock(project) {
+            if (project.mediaType === 'video' && project.mediaSrc) {
+                return `
+                    <div class="project-media">
+                        <video class="w-full h-full object-cover" controls muted loop playsinline poster="${project.poster || ''}">
+                            <source src="${project.mediaSrc}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                `;
+            } else if (project.mediaType === 'image' && project.mediaSrc) {
+                return `
+                    <a href="${project.github || '#'}" target="_blank" rel="noopener noreferrer" class="block project-media">
+                        <img src="${project.mediaSrc}" alt="${project.title}" class="w-full h-full object-cover">
+                    </a>
+                `;
+            } else {
+                // No media block if mediaType is 'none' or src is missing
+                return '<!-- No media for this project -->';
+            }
+        }
+    </script>
 </body>
 </html>
