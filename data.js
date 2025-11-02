@@ -30,6 +30,7 @@ const allExperience = [
 //
 // mediaType can be 'image', 'video', or 'none'
 // mediaSrc is the path to your file (e.g., 'assets/project.mp4' or 'assets/project.jpg')
+// aspect (optional): '9:16' for vertical videos
 // poster is an optional image to show before a video plays
 // github is the link to the repository
 //
@@ -59,7 +60,7 @@ const allProjects = [
         title: 'Flask-OSM-AStar-Router',
         description: `
             <p>A web application demonstrating A* pathfinding on OpenStreetMap (OSM) data for driving routes. This project uses Flask for the backend, Leaflet.js for the interactive map display, and calculates the estimated fastest driving route between two user-selected points, considering road types and speed limits.</p>
-        ,
+        `,
         mediaType: 'image',
         mediaSrc: 'assets/astar.png',
         poster: '',
@@ -70,14 +71,16 @@ const allProjects = [
         id: 'keras-classifier',
         title: 'Keras Alphabet Classifier',
         description: 
-            '<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
+            `<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
             <h4>Features</h4>
             <ul>
                 <li>Data preprocessing and normalization of 28x28 grayscale images.</li>
                 <li>CNN architecture with convolutional, batch normalization, max pooling, dropout, and dense layers.</li>
                 <li>Training with categorical cross-entropy loss and Adam optimizer.</li>
-                <li>Model evaluation with accuracy metrics and visualization of training progress.</li>`,
+                <li>Model evaluation with accuracy metrics and visualization of training progress.</li>
+            </ul>`,
         mediaType: 'none',
+        mediaSrc: '',
         poster: '',
         tags: ['Python', 'Keras', 'TensorFlow', 'CNN', 'Computer Vision'],
         github: 'https://github.com/Gagan-v04'
@@ -127,6 +130,7 @@ const allProjects = [
         title: 'Robotic Action Duration Prediction',
         description: '<p>Developed an ML model to predict robotic action duration from operational data. Employed automated feature selection (RFECV) and stacked ensembles to maximize accuracy.</p>',
         mediaType: 'none',
+        mediaSrc: '',
         poster: '',
         tags: ['Machine Learning', 'Python', 'Scikit-learn', 'RFECV'],
         github: 'https://github.com/Gagan-v04'
@@ -148,7 +152,7 @@ const allProjects = [
         mediaType: 'video',
         mediaSrc: 'assets/Pick_place.mp4', // Re-using this video as a placeholder
         poster: '',
-        tags: ['NVIDIA Isaac Sim', 'Pick & Place', 'Kinematics', 'Motion Planning'],
+        tags: ['NVIDIA Isaac Sim', 'Pick &Place', 'Kinematics', 'Motion Planning'],
         github: 'https://github.com/Gagan-v04'
     },
     {
@@ -191,3 +195,4 @@ const allProjects = [
         github: 'https://github.com/Gagan-v04'
     }
 ];
+
