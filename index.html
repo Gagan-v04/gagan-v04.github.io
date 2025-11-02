@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gagan V - Robotics & ML Engineer</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,38 +15,27 @@
         /* Base styles */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0F172A; /* slate-900 */
-            color: #CBD5E1; /* slate-300 */
+            background-color: #F8F9FA; /* Light gray background */
+            color: #212529; /* Dark text */
         }
 
-        /* Custom accent color */
+        /* Custom accent color (a subtle, professional blue) */
         .text-accent {
-            color: #38BDF8; /* sky-400 */
+            color: #007BFF;
         }
         .bg-accent {
-            background-color: #38BDF8;
+            background-color: #007BFF;
         }
         .border-accent {
-            border-color: #38BDF8;
+            border-color: #007BFF;
         }
         
-        /* Glassmorphism Navbar */
-        .glass-nav {
-            background-color: rgba(15, 23, 42, 0.8); /* slate-900 with 80% opacity */
+        /* Light Navbar */
+        .light-nav {
+            background-color: rgba(248, 249, 250, 0.8); /* Light gray with 80% opacity */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with 50% opacity */
-        }
-
-        /* Project Card Hover Effect */
-        .project-card {
-            background-color: #1E293B; /* slate-800 */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #334155; /* slate-700 */
-        }
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+            border-bottom: 1px solid #DEE2E6; /* Light border */
         }
 
         /* Section heading line */
@@ -53,15 +44,15 @@
             display: block;
             width: 60px;
             height: 3px;
-            background-color: #38BDF8; /* sky-400 */
+            background-color: #007BFF; /* Accent color */
             margin-top: 8px;
         }
         
         /* Tech Tag */
         .tech-tag {
-            background-color: #1E293B; /* slate-800 */
-            color: #38BDF8; /* sky-400 */
-            border: 1px solid #38BDF8;
+            background-color: #E9ECEF; /* Light gray */
+            color: #495057; /* Darker gray text */
+            font-weight: 500;
         }
         
         /* Scroll reveal animation */
@@ -80,7 +71,7 @@
             position: relative;
             padding-left: 3rem;
             padding-bottom: 2rem;
-            border-left: 2px solid #334155; /* slate-700 */
+            border-left: 2px solid #DEE2E6; /* Light border */
         }
         .timeline-item:last-child {
             border-left-color: transparent;
@@ -89,74 +80,101 @@
         .timeline-marker {
             position: absolute;
             left: -0.5rem; /* Adjust based on dot size */
-            top: 0;
+            top: 0.25rem;
             width: 1rem;
             height: 1rem;
             border-radius: 50%;
-            background-color: #38BDF8; /* sky-400 */
-            border: 3px solid #0F172A; /* slate-900 */
+            background-color: #007BFF; /* Accent */
+            border: 3px solid #F8F9FA; /* Background color */
         }
+        
+        /* Project Media */
+        .project-media {
+            width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid #DEE2E6;
+            margin-bottom: 1.5rem;
+            background-color: #E9ECEF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            color: #6C757D;
+        }
+        .project-media video {
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="glass-nav sticky top-0 z-50">
-        <nav class="container mx-auto max-w-6xl px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">
+    <!-- Header & Navigation -->
+    <header class="light-nav sticky top-0 z-50">
+        <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="#" class="text-2xl font-bold text-gray-900">
                 Gagan V<span class="text-accent">.</span>
             </a>
             
-            <button id="mobile-nav-toggle" class="md:hidden text-white z-50">
+            <!-- Mobile Nav Button (hidden on desktop) -->
+            <button id="mobile-nav-toggle" class="md:hidden text-gray-900 z-50">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
             
+            <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="text-slate-300 hover:text-accent transition duration-300">About</a>
-                <a href="#experience" class="text-slate-300 hover:text-accent transition duration-300">Experience</a>
-                <a href="#projects" class="text-slate-300 hover:text-accent transition duration-300">Projects</a>
-                <a href="#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-slate-900 transition duration-300">
+                <a href="#about" class="text-gray-700 hover:text-accent transition duration-300">About</a>
+                <a href="#experience" class="text-gray-700 hover:text-accent transition duration-300">Experience</a>
+                <a href="#projects" class="text-gray-700 hover:text-accent transition duration-300">Projects</a>
+                <a href="#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
                     Contact
                 </a>
             </div>
         </nav>
         
-        <div id="mobile-nav-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-slate-900 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
+        <!-- Mobile Nav Menu (hidden by default) -->
+        <div id="mobile-nav-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-gray-50 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
             <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="#about" class="text-2xl text-slate-300 hover:text-accent transition duration-300 mobile-link">About</a>
-                <a href="#experience" class="text-2xl text-slate-300 hover:text-accent transition duration-300 mobile-link">Experience</a>
-                <a href="#projects" class="text-2xl text-slate-300 hover:text-accent transition duration-300 mobile-link">Projects</a>
-                <a href="#contact" class="text-2xl px-6 py-3 text-accent border border-accent rounded-md hover:bg-accent hover:text-slate-900 transition duration-300 mobile-link">
+                <a href="#about" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">About</a>
+                <a href="#experience" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Experience</a>
+                <a href="#projects" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Projects</a>
+                <a href="#contact" class="text-2xl px-6 py-3 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300 mobile-link">
                     Contact
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto max-w-6xl px-6">
+    <!-- Main Content -->
+    <main class="container mx-auto max-w-4xl px-6">
 
-        <section id="home" class="min-h-[90vh] flex flex-col justify-center py-20">
-            <div class="reveal">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[80vh] flex flex-col justify-center py-20">
+            <div class="reveal max-w-3xl">
                 <h1 class="text-xl md:text-2xl text-accent font-medium mb-4">Hi, my name is</h1>
-                <h2 class="text-5xl md:text-7xl font-extrabold text-slate-100 mb-4">Gagan V.</h2>
-                <h3 class="text-4xl md:text-6xl font-bold text-slate-400 mb-8">I build intelligent robots.</h3>
-                <p class="max-w-2xl text-lg text-slate-400 mb-10">
+                <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-4">Gagan V.</h2>
+                <h3 class="text-4xl md:text-6xl font-bold text-gray-500 mb-8">I build intelligent robots.</h3>
+                <p class="max-w-2xl text-lg text-gray-600 leading-relaxed mb-10">
                     I'm a Robotics and Machine Learning Engineer based in Bengaluru, specializing in robotic simulation, computer vision, and autonomous systems. I'm passionate about integrating AI to create intelligent and adaptive robotic solutions.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#projects" class="px-8 py-4 text-lg font-medium text-center text-slate-900 bg-accent rounded-md hover:bg-sky-300 transition duration-300">
+                    <a href="#projects" class="px-8 py-4 text-lg font-medium text-center text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
                         View My Work
                     </a>
-                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-slate-900 transition duration-300">
+                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
                         View GitHub
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="py-24 reveal">
-            <h2 class="section-heading text-3xl font-bold text-slate-100 mb-12">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
-                <div class="md:col-span-5 space-y-6 text-lg text-slate-400">
+            <div class="max-w-3xl">
+                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-12">About Me</h2>
+                <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                     <p>
                         Hello! I'm Gagan, a passionate engineer with a strong foundation in Mechanical Engineering from Ramaiah Institute of Technology. My curiosity isn't just about how things are built, but how we can make them think, adapt, and interact with the world.
                     </p>
@@ -164,10 +182,10 @@
                         This drive led me to the intersection of physical systems and artificial intelligence. My professional experience has been focused on building and simulating autonomous systems, from high-performance search-and-rescue UAVs to sophisticated industrial cobots.
                     </p>
                     <p>
-                        I'm currently a Robotics & ML Intern at Sapien Robotics, where I'm leading an integration project for Schneider Electric, leveraging tools like <strong class="text-slate-300">NVIDIA Isaac Sim</strong>, <strong class="text-slate-300">ROS 2</strong>, and <strong class="text-slate-300">YOLO</strong> to bring autonomous solutions to life.
+                        I'm currently a Robotics & ML Intern at <a href="https://sapienrobotics.in" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline">Sapien Robotics</a>, where I'm leading an integration project for Schneider Electric, leveraging tools like <strong class="text-gray-800">NVIDIA Isaac Sim</strong>, <strong class="text-gray-800">ROS 2</strong>, and <strong class="text-gray-800">YOLO</strong> to bring autonomous solutions to life.
                     </p>
                     <p>Here are a few of the key technologies I work with:</p>
-                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-sm text-slate-300">
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-sm text-gray-600">
                         <li class="flex items-center"><span class="text-accent mr-2">▹</span>Python & C++</li>
                         <li class="flex items-center"><span class="text-accent mr-2">▹</span>ROS 2</li>
                         <li class="flex items-center"><span class="text-accent mr-2">▹</span>NVIDIA Isaac Sim</li>
@@ -179,18 +197,21 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
         <section id="experience" class="py-24 reveal">
-            <h2 class="section-heading text-3xl font-bold text-slate-100 mb-16">Professional Experience</h2>
-            
-            <div class="max-w-3xl mx-auto">
+            <div class="max-w-3xl">
+                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-16">Professional Experience</h2>
+                
+                <!-- Timeline -->
                 <div class="relative">
+                    <!-- Timeline Item 1: Sapien Robotics -->
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold text-slate-100">Robotics & Machine Learning Intern</h3>
-                            <h4 class="text-lg font-medium mb-1"><a href="https://sapienrobotics.ai" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Sapien Robotics</a></h4>
-                            <span class="text-sm font-mono text-slate-500">July 2025 – Present</span>
-                            <ul class="mt-4 space-y-3 text-slate-400">
+                            <h3 class="text-xl font-semibold text-gray-900">Robotics & Machine Learning Intern</h3>
+                            <h4 class="text-lg font-medium mb-1"><a href="https://sapienrobotics.in" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Sapien Robotics</a></h4>
+                            <span class="text-sm font-mono text-gray-500">July 2025 – Present</span>
+                            <ul class="mt-4 space-y-3 text-gray-600 leading-relaxed">
                                 <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Leading cobot integration for a Schneider Electric automated picking system using a Lexium 12S cobot on an AR 250 AMR.</li>
                                 <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Using NVIDIA Isaac Sim for simulation, synthetic data generation, and domain randomization to train robust DL models.</li>
                                 <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Implementing YOLO v11 and ArUco markers for high-accuracy, real-time object detection and precision alignment.</li>
@@ -198,13 +219,14 @@
                         </div>
                     </div>
 
+                    <!-- Timeline Item 2: Edhitha UAS -->
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="ml-4">
-                            <h3 class="text-xl font-semibold text-slate-100">Drone Manager & Structures Member</h3>
-                            <h4 class="text-lg font-medium mb-1"><a href=https://www.edhitha.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Edhitha Unmanned Aerial Systems</a></h4>
-                            <span class="text-sm font-mono text-slate-500">Jan 2023 – Sept 2024</span>
-                            <ul class="mt-4 space-y-3 text-slate-400">
+                            <h3 class="text-xl font-semibold text-gray-900">Drone Manager & Structures Member</h3>
+                            <h4 class="text-lg font-medium mb-1"><a href="https://www.linkedin.com/company/edhitha-uas/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Edhitha Unmanned Aerial Systems</a></h4>
+                            <span class="text-sm font-mono text-gray-500">Jan 2023 – Sept 2024</span>
+                            <ul class="mt-4 space-y-3 text-gray-600 leading-relaxed">
                                 <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Led the design and fabrication of autonomous drones, including a 25-kg heavy-lift quadcopter for search-and-rescue.</li>
                                 <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Conducted design optimizations and aerodynamic simulations in Fusion 360 and SolidWorks.</li>
                                 <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>**Achievement:** Won 1st Place in Technical Design (out of 69 teams) at SUAS 2024 - Robonation.</li>
@@ -215,18 +237,29 @@
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="py-24 reveal">
-            <h2 class="section-heading text-3xl font-bold text-slate-100 mb-16">Selected Projects</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="max-w-3xl">
+                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-16">Selected Projects</h2>
                 
-                <div class="project-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block h-56 bg-slate-700">
-                        <img src="assets/project1.jpg" alt="Natural Language Robot Control" class="w-full h-full object-cover">
-                    </a>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Natural Language Robot Control</h3>
-                        <p class="text-slate-400 mb-4 flex-grow">
+                <div class="space-y-20">
+                    
+                    <!-- Project 1: NLP Robot -->
+                    <article>
+                        <!-- 
+                          VIDEO PLACEHOLDER: 
+                          - Replace 'assets/project1.jpg' with a poster image.
+                          - Add your video file to the src attribute.
+                          - I've added 'controls' so users can play/pause.
+                        -->
+                        <div class="project-media">
+                            <video class="w-full h-full object-cover" controls muted loop playsinline>
+                                <source src="assets/rmpflow.mp4" type="video/mp4"> 
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Natural Language Robot Control</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
                             Built a pipeline integrating voice input, AI planning, and robot execution in Gazebo. The system uses an LLM to interpret commands and MongoDB to manage task workflows.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -236,19 +269,24 @@
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Gazebo</span>
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">MongoDB</span>
                         </div>
-                        <div class="mt-auto">
-                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
+                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
+                    </article>
+                    
+                    <!-- Project 2: RL Pick & Place -->
+                    <article>
+                        <!-- 
+                          VIDEO PLACEHOLDER: 
+                          - Replace 'assets/project1.jpg' with a poster image.
+                          - Add your video file to the src attribute.
+                        -->
+                        <div class="project-media">
+                            <video class="w-full h-full object-cover" controls muted loop playsinline>
+                                <source src="assets/Pick_place.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="project-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block h-56 bg-slate-700">
-                        <img src="assets/project1.jpg" alt="Robotic Pick & Place with RL" class="w-full h-full object-cover">
-                    </a>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Robotic Pick & Place with RL</h3>
-                        <p class="text-slate-400 mb-4 flex-grow">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Robotic Pick & Place with RL</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
                             Trained a PPO reinforcement learning agent for a pick-and-place task in PyBullet. The agent controls a UR5 robot, using a state-based observation space and a shaped reward function.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -257,19 +295,16 @@
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">PPO</span>
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">PyBullet</span>
                         </div>
-                        <div class="mt-auto">
-                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block h-56 bg-slate-700">
-                        <img src="assets/project2.jpg" alt="High-Performance S&R UAV" class="w-full h-full object-cover">
-                    </a>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-slate-100 mb-2">High-Performance S&R UAV</h3>
-                        <p class="text-slate-400 mb-4 flex-grow">
+                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
+                    </article>
+                    
+                    <!-- Project 3: S&R UAV -->
+                    <article>
+                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block project-media">
+                            <img src="assets/drone.JPG" alt="High-Performance S&R UAV" class="w-full h-full object-cover">
+                        </a>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">High-Performance S&R UAV</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
                             Engineered and fabricated a 25-kg heavy-lift quadcopter for search-and-rescue, achieving a 1.8 FOS ratio. This project won 1st Place in Technical Design at SUAS 2024.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -278,19 +313,16 @@
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">UAV Design</span>
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Simulation</span>
                         </div>
-                        <div class="mt-auto">
-                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card rounded-lg overflow-hidden flex flex-col">
-                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block h-56 bg-slate-700">
-                        <img src="assets/project2.jpg" alt="Robotic Action Duration Prediction" class="w-full h-full object-cover">
-                    </a>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Robotic Action Duration Prediction</h3>
-                        <p class="text-slate-400 mb-4 flex-grow">
+                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
+                    </article>
+                    
+                    <!-- Project 4: Action Duration Prediction -->
+                    <article>
+                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block project-media">
+                            <img src="assets/project2.jpg" alt="Robotic Action Duration Prediction" class="w-full h-full object-cover">
+                        </a>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Robotic Action Duration Prediction</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
                             Developed an ML model to predict robotic action duration from operational data. Employed automated feature selection (RFECV) and stacked ensembles to maximize accuracy.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -299,36 +331,40 @@
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Scikit-learn</span>
                             <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">RFECV</span>
                         </div>
-                        <div class="mt-auto">
-                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-                </div>
+                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
+                    </article>
 
-            </div>
+                </div>
             
-            <div class="text-center mt-16 reveal">
-                <a href="projects.html" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-slate-900 transition duration-300">
-                    More Projects
+                <!-- View All Projects Button -->
+                <div class="text-center mt-20 reveal">
+                    <a href="archive.html" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
+                        View Full Project Archive
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 text-center reveal">
+            <div class="max-w-xl mx-auto">
+                <h2 class="text-xl font-medium text-accent mb-4">What's Next?</h2>
+                <h3 class="text-5xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+                <p class="text-lg text-gray-600 leading-relaxed mb-10">
+                    I'm always open to discussing new projects, opportunities in robotics and AI, or just connecting. My inbox is always open!
+                </p>
+                <a href="mailto:gaganhm08@gmail.com" class="px-10 py-5 text-lg font-medium text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
+                    Say Hello
                 </a>
             </div>
         </section>
 
-        <section id="contact" class="py-32 text-center reveal">
-            <h2 class="text-2xl font-medium text-accent mb-4">What's Next?</h2>
-            <h3 class="text-5xl font-bold text-slate-100 mb-6">Get In Touch</h3>
-            <p class="max-w-xl mx-auto text-lg text-slate-400 mb-10">
-                I'm always open to discussing new projects, opportunities in robotics and AI, or just connecting. My inbox is always open!
-            </p>
-            <a href="mailto:gaganhm08@gmail.com" class="px-10 py-5 text-lg font-medium text-slate-900 bg-accent rounded-md hover:bg-sky-300 transition duration-300">
-                Say Hello
-            </a>
-        </section>
-
     </main>
     
-    <footer class="py-8 border-t border-slate-800">
-        <div class="container mx-auto max-w-6xl px-6 flex flex-col md:flex-row justify-between items-center text-slate-500">
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-200">
+        <div class="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row justify-between items-center text-gray-500">
+            <!-- Social Links -->
             <div class="flex space-x-6 mb-4 md:mb-0">
                 <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
@@ -390,3 +426,4 @@
     </script>
 </body>
 </html>
+
