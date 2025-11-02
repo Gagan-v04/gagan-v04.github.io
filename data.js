@@ -112,7 +112,7 @@ const allProjects = [
         id: 'rl-pick-place',
         title: 'Robotic Pick & Place with RL',
         description: '<p>Trained a PPO reinforcement learning agent for a pick-and-place task in PyBullet. The agent controls a UR5 robot, using a state-based observation space and a shaped reward function.</p>',
-        mediaType: 'video',
+        mediaType: 'none',
         mediaSrc: 'assets/Pick_place.mp4',
         poster: 'assets/pick-place-poster.jpg', // Example poster
         tags: ['Python', 'Reinforcement Learning', 'PPO', 'PyBullet'],
