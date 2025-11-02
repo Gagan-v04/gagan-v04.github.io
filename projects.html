@@ -81,6 +81,22 @@
             object-fit: cover;
         }
         
+        /* --- FIX for 9:16 videos --- */
+        .project-media.is-vertical {
+            height: 600px; /* Taller container for vertical */
+            max-height: 70vh;
+        }
+        .project-media.is-vertical video {
+            object-fit: contain; /* 'contain' for vertical */
+        }
+        /* Fix for fullscreen */
+        video:fullscreen {
+            object-fit: contain !important;
+        }
+        video::-webkit-media-controls-fullscreen-button {
+            display: block; /* Ensure fullscreen button is always visible */
+        }
+        
         /* Project description formatting */
         .project-description {
             color: #495057; /* gray-700 */
@@ -207,12 +223,11 @@
             if (project.mediaType === 'video' && project.mediaSrc) {
                 // Check if the video source is 9:16 (vertical)
                 const isVertical = project.aspect === '9:16';
-                const heightClass = isVertical ? 'h-[600px] max-h-[70vh]' : 'h-[500px]'; // Taller container for vertical
-                const objectFitClass = isVertical ? 'object-contain' : 'object-cover'; // 'contain' for vertical, 'cover' for standard
+                const containerClass = isVertical ? 'project-media is-vertical' : 'project-media';
 
                 return `
-                    <div class="project-media ${heightClass}">
-                        <video class="w-full h-full ${objectFitClass}" controls muted loop playsinline poster="${project.poster || ''}">
+                    <div class="${containerClass}">
+                        <video class="w-full h-full" controls muted loop playsinline poster="${project.poster || ''}">
                             <source src="${project.mediaSrc}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
