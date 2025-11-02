@@ -59,21 +59,7 @@ const allProjects = [
         title: 'Flask-OSM-AStar-Router',
         description: `
             <p>A web application demonstrating A* pathfinding on OpenStreetMap (OSM) data for driving routes. This project uses Flask for the backend, Leaflet.js for the interactive map display, and calculates the estimated fastest driving route between two user-selected points, considering road types and speed limits.</p>
-            <h4>Features</h4>
-            <ul>
-                <li><strong>Interactive Map:</strong> Uses Leaflet.js for a pannable, zoomable map interface.</li>
-                <li><strong>OSM Data Parsing:</strong> Leverages <code>pyrosm</code> to read road network data directly from OpenStreetMap PBF files.</li>
-                <li><strong>Graph Construction:</strong> Builds a weighted graph using <code>networkx</code> where nodes represent geographical points and edge weights represent the estimated travel time.</li>
-                <li><strong>Fastest Path Calculation:</strong> Implements the <code>A* search algorithm</code> to find the path with the minimum total travel time.</li>
-                <li><strong>Route Visualization:</strong> Displays the calculated fastest path on the Leaflet map.</li>
-            </ul>
-            <h4>Algorithm Details</h4>
-            <ul>
-                <li><strong>Graph Building:</strong> A <code>networkx.Graph</code> is constructed where edge weights represent estimated travel time (<code>segment_distance / estimated_speed_mps</code>).</li>
-                <li><strong>Pathfinding (A*):</strong> Uses <code>networkx.astar_path</code> to find the path minimizing the sum of edge time.</li>
-                <li><strong>Heuristic Function:</strong> An admissible heuristic <code>h(u, v)</code> estimates the minimum remaining time as <code>straight_line_distance(u, v) / maximum_network_speed</code>.</li>
-            </ul>
-        `,
+        ,
         mediaType: 'image',
         mediaSrc: 'assets/astar.png',
         poster: '',
@@ -83,24 +69,15 @@ const allProjects = [
     {
         id: 'keras-classifier',
         title: 'Keras Alphabet Classifier',
-        description: `
-            <p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
+        description: 
+            '<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
             <h4>Features</h4>
             <ul>
                 <li>Data preprocessing and normalization of 28x28 grayscale images.</li>
                 <li>CNN architecture with convolutional, batch normalization, max pooling, dropout, and dense layers.</li>
                 <li>Training with categorical cross-entropy loss and Adam optimizer.</li>
-                <li>Model evaluation with accuracy metrics and visualization of training progress.</li>
-            </ul>
-            <h4>Usage</h4>
-            <ul>
-                <li>Place <code>A_Z Handwritten Data.csv</code> in the project directory.</li>
-                <li>Run <code>train.py</code> to train the model.</li>
-                <li>Use <code>test.py</code> to evaluate the model on test samples.</li>
-            </ul>
-        `,
-        mediaType: 'image',
-        mediaSrc: 'assets/project2.jpg',
+                <li>Model evaluation with accuracy metrics and visualization of training progress.</li>`,
+        mediaType: 'none',
         poster: '',
         tags: ['Python', 'Keras', 'TensorFlow', 'CNN', 'Computer Vision'],
         github: 'https://github.com/Gagan-v04'
@@ -109,7 +86,7 @@ const allProjects = [
         id: 'ocr-embeddings',
         title: 'OCR & Image Embeddings for Price Prediction',
         description: '<p>Developed an end-to-end machine learning pipeline to predict product prices. This project involved advanced feature engineering, text embeddings (SentenceTransformers), image embeddings (CLIP), and OCR (EasyOCR) to build a robust model.</p>',
-        mediaType: 'none', // No media specified, will not show a media block
+        mediaType: 'none', 
         mediaSrc: '',
         poster: '',
         tags: ['Python', 'Machine Learning', 'CLIP', 'EasyOCR', 'XGBoost'],
@@ -120,7 +97,7 @@ const allProjects = [
         title: 'Natural Language Robot Control',
         description: '<p>Built a pipeline integrating voice input, AI planning, and robot execution in Gazebo. The system uses an LLM to interpret commands and MongoDB to manage task workflows.</p>',
         mediaType: 'image',
-        mediaSrc: 'assets/nlp+ros2.jpg',
+        mediaSrc: 'assets/nlp+ros2.png',
         poster: '',
         tags: ['Python', 'ROS 2', 'LLM', 'Gazebo', 'MongoDB'],
         github: 'https://github.com/Gagan-v04'
@@ -149,8 +126,7 @@ const allProjects = [
         id: 'action-prediction',
         title: 'Robotic Action Duration Prediction',
         description: '<p>Developed an ML model to predict robotic action duration from operational data. Employed automated feature selection (RFECV) and stacked ensembles to maximize accuracy.</p>',
-        mediaType: 'image',
-        mediaSrc: 'assets/project2.jpg',
+        mediaType: 'none',
         poster: '',
         tags: ['Machine Learning', 'Python', 'Scikit-learn', 'RFECV'],
         github: 'https://github.com/Gagan-v04'
