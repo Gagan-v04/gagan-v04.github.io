@@ -1,652 +1,353 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gagan V - Robotics & ML Engineer</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Base styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA; /* Light gray background */
-            color: #212529; /* Dark text */
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gagan V - Robotics & ML Engineer</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA; /* Light gray background */
+            color: #212529; /* Dark text */
+        }
 
-        /* Custom accent color (a subtle, professional blue) */
-        .text-accent {
-            color: #007BFF;
-        }
-        .bg-accent {
-            background-color: #007BFF;
-        }
-        .border-accent {
-            border-color: #007BFF;
-        }
-        
-        /* Light Navbar */
-        .light-nav {
-            background-color: rgba(248, 249, 250, 0.8); /* Light gray with 80% opacity */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid #DEE2E6; /* Light border */
-        }
+        /* Custom accent color (a subtle, professional blue) */
+        .text-accent {
+            color: #007BFF;
+        }
+        .bg-accent {
+            background-color: #007BFF;
+        }
+        .border-accent {
+            border-color: #007BFF;
+        }
+        
+        /* Light Navbar */
+        .light-nav {
+            background-color: rgba(248, 249, 250, 0.8); /* Light gray with 80% opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid #DEE2E6; /* Light border */
+        }
 
-        /* Section heading line */
-        .section-heading::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #007BFF; /* Accent color */
-            margin-top: 8px;
-        }
-        
-        /* Tech Tag */
-        .tech-tag {
-            background-color: #E9ECEF; /* Light gray */
-            color: #495057; /* Darker gray text */
-            font-weight: 500;
-        }
-        
-        /* Scroll reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Timeline */
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 2rem;
-            border-left: 2px solid #DEE2E6; /* Light border */
-        }
-        .timeline-item:last-child {
-            border-left-color: transparent;
-            padding-bottom: 0;
-        }
-        .timeline-marker {
-            position: absolute;
-            left: -0.5rem; /* Adjust based on dot size */
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #007BFF; /* Accent */
-            border: 3px solid #F8F9FA; /* Background color */
-        }
-        
-        /* Project Media */
-        .project-media {
-            width: 100%;
-            border-radius: 0.5rem;
-            border: 1px solid #DEE2E6;
-            margin-bottom: 1.5rem;
-            background-color: #E9ECEF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-            color: #6C757D;
-            overflow: hidden; /* Ensure video/img corners are rounded */
-        }
-        .project-media video {
-            width: 100%;
-            border-radius: 0.5rem;
-        }
-        .project-media img {
-            width: 100%;
-            border-radius: 0.5rem;
-            object-fit: cover;
-            max-height: 500px;
-        }
-        
-        /* Project description formatting */
-        .project-description {
-            color: #495057; /* gray-700 */
-            line-height: 1.6;
-        }
-        .project-description h4 {
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* font-semibold */
-            color: #343A40; /* gray-800 */
-            margin-top: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        .project-description ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .project-description li {
-            margin-bottom: 0.25rem;
-        }
-        .project-description code {
-            font-family: monospace;
-            background-color: #E9ECEF;
-            padding: 0.1rem 0.3rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-        }
+        /* Section heading line */
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #007BFF; /* Accent color */
+            margin-top: 8px;
+        }
+        
+        /* Tech Tag */
+        .tech-tag {
+            background-color: #E9ECEF; /* Light gray */
+            color: #495057; /* Darker gray text */
+            font-weight: 500;
+        }
+        
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #DEE2E6; /* Light border */
+        }
+        .timeline-item:last-child {
+            border-left-color: transparent;
+            padding-bottom: 0;
+        }
+        .timeline-marker {
+            position: absolute;
+            left: -0.5rem; /* Adjust based on dot size */
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #007BFF; /* Accent */
+            border: 3px solid #F8F9FA; /* Background color */
+        }
+        
+        /* Project Media */
+        .project-media {
+            width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid #DEE2E6;
+            margin-bottom: 1.5rem;
+            background-color: #E9ECEF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            color: #6C757D;
+            overflow: hidden; /* Ensure video/img corners are rounded */
+        }
+        .project-media video {
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+        .project-media img {
+            width: 100%;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            max-height: 500px;
+        }
+        
+        /* Project description formatting */
+        .project-description {
+            color: #495057; /* gray-700 */
+            line-height: 1.6;
+        }
+        .project-description h4 {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: #343A40; /* gray-800 */
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-description ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-description li {
+            margin-bottom: 0.25rem;
+        }
+        .project-description code {
+            font-family: monospace;
+            background-color: #E9ECEF;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
 
-    </style>
+    </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
-    <header class="light-nav sticky top-0 z-50">
-        <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
-            <!-- Logo / Name -->
-            <a href="#" class="text-2xl font-bold text-gray-900">
-                Gagan V<span class="text-accent">.</span>
-            </a>
-            
-            <!-- Mobile Nav Button (hidden on desktop) -->
-            <button id="mobile-nav-toggle" class="md:hidden text-gray-900 z-50">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-            
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="text-gray-700 hover:text-accent transition duration-300">About</a>
-                <a href="#experience" class="text-gray-700 hover:text-accent transition duration-300">Experience</a>
-                <a href="#projects" class="text-gray-700 hover:text-accent transition duration-300">Projects</a>
-                <a href="#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
-                    Contact
-                </a>
-            </div>
-        </nav>
-        
-        <!-- Mobile Nav Menu (hidden by default) -->
-        <div id="mobile-nav-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-gray-50 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="#about" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">About</a>
-                <a href="#experience" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Experience</a>
-                <a href="#projects" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Projects</a>
-                <a href="#contact" class="text-2xl px-6 py-3 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300 mobile-link">
-                    Contact
-                </a>
-            </div>
-        </div>
-    </header>
+        <header class="light-nav sticky top-0 z-50">
+        <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
+                        <a href="#" class="text-2xl font-bold text-gray-900">
+                Gagan V<span class="text-accent">.</span>
+            </a>
+            
+                        <button id="mobile-nav-toggle" class="md:hidden text-gray-900 z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            
+                        <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="text-gray-700 hover:text-accent transition duration-300">About</a>
+                <a href="#experience" class="text-gray-700 hover:text-accent transition duration-300">Experience</a>
+                <a href="#projects" class="text-gray-700 hover:text-accent transition duration-300">Projects</a>
+                <a href="#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
+                    Contact
+                </a>
+            </div>
+        </nav>
+        
+                <div id="mobile-nav-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-gray-50 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="#about" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">About</a>
+                <a href="#experience" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Experience</a>
+                <a href="#projects" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Projects</a>
+                <a href="#contact" class="text-2xl px-6 py-3 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300 mobile-link">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto max-w-4xl px-6">
+        <main class="container mx-auto max-w-4xl px-6">
 
-        <!-- Hero Section -->
-        <section id="home" class="min-h-[80vh] flex flex-col justify-center py-20">
-            <div class="reveal max-w-3xl">
-                <h1 class="text-xl md:text-2xl text-accent font-medium mb-4">Hi, my name is</h1>
-                <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-4">Gagan V.</h2>
-                <h3 class="text-4xl md:text-6xl font-bold text-gray-500 mb-8">I build intelligent robots.</h3>
-                <p class="max-w-2xl text-lg text-gray-600 leading-relaxed mb-10">
-                    I'm a Robotics and Machine Learning Engineer based in Bengaluru, specializing in robotic simulation, computer vision, and autonomous systems. I'm passionate about integrating AI to create intelligent and adaptive robotic solutions.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#projects" class="px-8 py-4 text-lg font-medium text-center text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
-                        View My Work
-                    </a>
-                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
-                        View GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
+                <section id="home" class="min-h-[80vh] flex flex-col justify-center py-20">
+            <div class="reveal max-w-3xl">
+                <h1 class="text-xl md:text-2xl text-accent font-medium mb-4">Hi, my name is</h1>
+                <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-4">Gagan V.</h2>
+          t     <h3 class="text-4xl md:text-6xl font-bold text-gray-500 mb-8">I build intelligent robots.</h3>
+                <p class="max-w-2xl text-lg text-gray-600 leading-relaxed mb-10">
+                    I'm a Robotics and Machine Learning Engineer based in Bengaluru, specializing in robotic simulation, computer vision, and autonomous systems. I'm passionate about integrating AI to create intelligent and adaptive robotic solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#projects" class="px-8 py-4 text-lg font-medium text-center text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
+                        View My Work
+                    </a>
+                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
+                        View GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-24 reveal">
-            <div class="max-w-3xl">
-                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-12">About Me</h2>
-                <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
-                    <p>
-                        Hello! I'm Gagan, a passionate engineer with a strong foundation in Mechanical Engineering from Ramaiah Institute of Technology. My curiosity isn't just about how things are built, but how we can make them think, adapt, and interact with the world.
-                    </p>
-                    <p>
-                        This drive led me to the intersection of physical systems and artificial intelligence. My professional experience has been focused on building and simulating autonomous systems, from high-performance search-and-rescue UAVs to sophisticated industrial cobots.
-                    </p>
-                    <p>
-                        I'm currently a Robotics & ML Intern at <a href="https://sapienrobotics.in" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline">Sapien Robotics</a>, where I'm leading an integration project for Schneider Electric, leveraging tools like <strong class="text-gray-800">NVIDIA Isaac Sim</strong>, <strong class="text-gray-800">ROS 2</strong>, and <strong class="text-gray-800">YOLO</strong> to bring autonomous solutions to life.
-                    </p>
-                    <p>Here are a few of the key technologies I work with:</p>
-                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-sm text-gray-600">
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>Python & C++</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>ROS 2</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>NVIDIA Isaac Sim</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>MoveIt & Gazebo</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>YOLO & PyBullet</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>SolidWorks & Fusion 360</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <section id="about" class="py-24 reveal">
+            <div class="max-w-3xl">
+                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-12">About Me</h2>
+                <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                    <p>
+                        Hello! I'm Gagan, a passionate engineer with a strong foundation in Mechanical Engineering from Ramaiah Institute of Technology. My curiosity isn't just about how things are built, but how we can make them think, adapt, and interact with the world.
+                    </p>
+                    <p>
+                        This drive led me to the intersection of physical systems and artificial intelligence. My professional experience has been focused on building and simulating autonomous systems, from high-performance search-and-rescue UAVs to sophisticated industrial cobots.
+                    </p>
+                    <p>
+                        I'm currently a Robotics & ML Intern at <a href="https://sapienrobotics.in" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline">Sapien Robotics</a>, where I'm leading an integration project for Schneider Electric, leveraging tools like <strong class="text-gray-800">NVIDIA Isaac Sim</strong>, <strong class="text-gray-800">ROS 2</strong>, and <strong class="text-gray-800">YOLO</strong> to bring autonomous solutions to life.
+                    </p>
+                    <p>Here are a few of the key technologies I work with:</p>
+                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>Python & C++</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>ROS 2</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>NVIDIA Isaac Sim</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>MoveIt & Gazebo</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>YOLO & PyBullet</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>SolidWorks & Fusion 360</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="py-24 reveal">
-            <div class="max-w-3xl">
-                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-16">Professional Experience</h2>
-                
-                <!-- Timeline -->
-                <div class="relative">
-                    <!-- Timeline Item 1: Sapien Robotics -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="ml-4">
-                            <h3 class="text-xl font-semibold text-gray-900">Robotics & Machine Learning Intern</h3>
-                            <h4 class="text-lg font-medium mb-1"><a href="https://sapienrobotics.in" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Sapien Robotics</a></h4>
-                            <span class="text-sm font-mono text-gray-500">July 2025 – Present</span>
-                            <ul class="mt-4 space-y-3 text-gray-600 leading-relaxed">
-                                <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Leading cobot integration for a Schneider Electric automated picking system using a Lexium 12S cobot on an AR 250 AMR.</li>
-                                <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Using NVIDIA Isaac Sim for simulation, synthetic data generation, and domain randomization to train robust DL models.</li>
-                                <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Implementing YOLO v11 and ArUco markers for high-accuracy, real-time object detection and precision alignment.</li>
-                            </ul>
-                        </div>
-                    </div>
+                <section id="experience" class="py-24 reveal">
+            <div class="max-w-3xl">
+                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-16">Professional Experience</h2>
+                
+                                <div id="experience-timeline" class="relative">
+                                    </div>
+            </div>
+        </section>
 
-                    <!-- Timeline Item 2: Edhitha UAS -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="ml-4">
-                            <h3 class="text-xl font-semibold text-gray-900">Drone Manager & Structures Member</h3>
-                            <h4 class="text-lg font-medium mb-1"><a href="https://www.linkedin.com/company/edhitha-uas/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Edhitha Unmanned Aerial Systems</a></h4>
-                            <span class="text-sm font-mono text-gray-500">Jan 2023 – Sept 2024</span>
-                            <ul class="mt-4 space-y-3 text-gray-600 leading-relaxed">
-                                <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Led the design and fabrication of autonomous drones, including a 25-kg heavy-lift quadcopter for search-and-rescue.</li>
-                                <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>Conducted design optimizations and aerodynamic simulations in Fusion 360 and SolidWorks.</li>
-                                <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>**Achievement:** Won 1st Place in Technical Design (out of 69 teams) at SUAS 2024 - Robonation.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <section id="projects" class="py-24">
+            <div class="max-w-3xl">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16">
+                    <h2 class="section-heading text-3xl font-bold text-gray-900 mb-4 md:mb-0">
+                        Selected Projects
+                    </h2>
+                    <a href="projects.html" class="text-accent font-medium hover:underline transition duration-300">
+                        View All Projects &rarr;
+                    </a>
+                </div>
+                
+                                <div id="featured-projects" class="space-y-20">
+                                    </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-24">
-            <div class="max-w-3xl">
-                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-16">Selected Projects</h2>
-                
-                <div class="space-y-20">
-                    
-                    <!-- Project 1: Schneider Cobot -->
-                    <article>
-                        <div class="project-media">
-                            <video class="w-full h-full object-cover" controls muted loop playsinline>
-                                <source src="assets/schneider.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Cobot Pick & Place for Schneider Electric</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Leading the integration of a Lexium 12S cobot for an automated bin-picking task. This system uses AprilTags for high-precision positioning and a YOLOv11 classification model for real-time object identification and error handling.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">ROS 2</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">YOLOv11</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">AprilTags</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Cobot Integration</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
-                    
-                    <!-- Project 2: Franka Arm Teleoperation -->
-                    <article>
-                        <div class="project-media">
-                            <video class="w-full h-full object-cover" controls muted loop playsinline>
-                                <source src="assets/teleop.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Franka Arm Teleoperation in Isaac Sim</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Developed a teleoperation system to control a Franka Emika Panda arm within NVIDIA Isaac Sim using a Logitech Extreme 3D Pro Joystick. This project bridges physical joystick inputs to simulated robotic control for intuitive manipulation.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">NVIDIA Isaac Sim</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Python</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Teleoperation</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Robotics</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+            </div>
+        </section>
 
-                    <!-- Project 3: Flask-OSM-AStar-Router -->
-                    <article>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block project-media">
-                            <img src="assets/astar.png" alt="Flask-OSM-AStar-Router" class="w-full h-full object-cover">
-                        </a>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Flask-OSM-AStar-Router</h3>
-                        <div class="text-gray-600 leading-relaxed mb-4 project-description">
-                            <p>A web application demonstrating A* pathfinding on OpenStreetMap (OSM) data for driving routes. This project uses Flask for the backend, Leaflet.js for the interactive map display, and calculates the estimated fastest driving route between two user-selected points, considering road types and speed limits.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Python</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Flask</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">NetworkX</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">A* Algorithm</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">pyrosm</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Leaflet.js</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
-                    
-                    <!-- Project 4: Keras Alphabet Classifier -->
-                    <article>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Keras Alphabet Classifier</h3>
-                        <div class="text-gray-600 leading-relaxed mb-4 project-description">
-                            <p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Python</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Keras</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">TensorFlow</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">CNN</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Computer Vision</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+                <section id="contact" class="py-32 text-center reveal">
+            <div class="max-w-xl mx-auto">
+                <h2 class="text-xl font-medium text-accent mb-4">What's Next?</h2>
+                <h3 class="text-5xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+                <p class="text-lg text-gray-600 leading-relaxed mb-10">
+                    I'm always open to discussing new projects, opportunities in robotics and AI, or just connecting. My inbox is always open!
+                </p>
+                <a href="mailto:gaganhm08@gmail.com" class="px-10 py-5 text-lg font-medium text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
+                    Say Hello
+                </a>
+            </div>
+        </section>
 
-                    <!-- Project 5: OCR Embeddings -->
-                    <article>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">OCR & Image Embeddings for Price Prediction</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Developed an end-to-end machine learning pipeline to predict product prices. This project involved advanced feature engineering, text embeddings (SentenceTransformers), image embeddings (CLIP), and OCR (EasyOCR) to build a robust model.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Python</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Machine Learning</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">CLIP</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">EasyOCR</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">XGBoost</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+    </main>
+    
+        <footer class="py-8 border-t border-gray-200">
+        <div class="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row justify-between items-center text-gray-500">
+                        <div class="flex space-x-6 mb-4 md:mb-0">
+                <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/gaganv20" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            <p class="text-sm">
+                Designed & Built by Gagan V
+            </p>
+        </div>
+    </footer>
 
-                    <!-- Project 6: Natural Language Robot Control -->
-                    <article>
-                        <div class="project-media">
-                            <img src="assets/nlp+ros2.png" alt="Pick and Place Project" class="w-full h-full object-cover rounded-lg shadow-lg border border-slate-700" />
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Natural Language Robot Control</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Built a pipeline integrating voice input, AI planning, and robot execution in Gazebo. The system uses an LLM to interpret commands and MongoDB to manage task workflows.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Python</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">ROS 2</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">LLM</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Gazebo</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">MongoDB</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
-                    
-                    <!-- Project 7: RL Pick & Place -->
-                    <article>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Robotic Pick & Place with RL</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Trained a PPO reinforcement learning agent for a pick-and-place task in PyBullet. The agent controls a UR5 robot, using a state-based observation space and a shaped reward function.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Python</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Reinforcement Learning</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">PPO</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">PyBullet</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
-                    
-                    <!-- Project 8: S&R UAV -->
-                    <article>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="block project-media">
-                            <img src="assets/drone.JPG" alt="High-Performance S&R UAV" class="w-full h-full object-cover">
-                        </a>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">High-Performance S&R UAV</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Engineered and fabricated a 25-kg heavy-lift quadcopter for search-and-rescue, achieving a 1.8 FOS ratio. This project won 1st Place in Technical Design at SUAS 2024.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">SolidWorks</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Fusion 360</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">UAV Design</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Simulation</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
-                    
-                    <!-- Project 9: Action Duration Prediction -->
-                    <article>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Robotic Action Duration Prediction</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Developed an ML model to predict robotic action duration from operational data. Employed automated feature selection (RFECV) and stacked ensembles to maximize accuracy.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Machine Learning</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Python</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Scikit-learn</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">RFECV</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+        <script src="projects.js"></script>
+    
+    <script>
+        // --- 1. RENDER DYNAMIC CONTENT ---
+        // This runs immediately after projects.js is loaded.
+        // It finds the empty containers and fills them with content.
+        (function() {
+            // Render the experience timeline
+            renderExperiences('#experience-timeline');
+            
+            // --- Define & Render Featured Projects ---
+            //
+            // *** THIS IS WHERE YOU CHOOSE YOUR PROJECTS ***
+            // Just add the 'id' from projects.js to this array.
+            //
+            const featuredProjectIds = ['p1', 'p14', 'p11', 'p10', 'p13', 'p8'];
+            
+            // Filter the main list to get only the projects you want
+            const featuredProjects = allProjects.filter(p => featuredProjectIds.includes(p.id));
+            
+            // Render only the featured projects
+            renderProjects('#featured-projects', featuredProjects);
+        })();
 
-                    <!-- Project 10: Synthetic Data Generation -->
-                    <article>
-                        <div class="project-media">
-                            <video class="w-full h-full object-cover" controls muted loop playsinline>
-                                <source src="assets/data_gen.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Synthetic Data Generation in Isaac Sim</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Utilized NVIDIA Isaac Sim to generate high-fidelity synthetic datasets for training deep learning models. This process involved extensive use of domain randomization (textures, lighting, object placement) and data replication to create robust models that generalize well to real-world scenarios.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">NVIDIA Isaac Sim</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Synthetic Data</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Domain Randomization</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Data Replication</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+        // --- 2. ORIGINAL SCRIPT (Mobile Nav) ---
+        const navToggle = document.getElementById('mobile-nav-toggle');
+        const navMenu = document.getElementById('mobile-nav-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-                    <!-- Project 11: Isaac Sim Pick & Place (Complex Mesh) -->
-                    <article>
-                        <div class="project-media">
-                            <video class="w-full h-full object-cover" controls muted loop playsinline>
-                                <source src="assets/Pick_place.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Pick & Place with Complex Meshes in Isaac Sim</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Developed a pick and place pipeline in Isaac Sim for objects with complex, non-convex meshes. This system used a kinematics-based solver for motion planning and grasp execution, focusing on reliable handling of challenging geometries in a simulated environment.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">NVIDIA Isaac Sim</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Pick & Place</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Kinematics</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Motion Planning</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('-translate-x-full');
+                // Toggle hamburger icon to X
+                if (navMenu.classList.contains('-translate-x-full')) {
+                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
+                } else {
+                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+                }
+            });
 
-                    <!-- Project 12: RMPflow Obstacle Avoidance -->
-                    <article>
-                        <div class="project-media">
-                            <video class="w-full h-full object-cover" controls muted loop playsinline>
-                                <source src="assets/rmpflow.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">RMPflow Obstacle Avoidance with Franka Arm</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Implemented RMPflow (Robotic Motion Policies) on a Franka Emika Panda arm in Isaac Sim. This project focused on real-time, reactive obstacle avoidance, allowing the robot to dynamically adjust its trajectory to avoid unforeseen objects while moving towards its goal.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">NVIDIA Isaac Sim</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">RMPflow</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Obstacle Avoidance</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Franka Emika</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+            // Close menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.add('-translate-x-full');
+                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
+                });
+            });
+        }
 
-                    <!-- Project 13: TurtleBot in Isaac Sim (ROS 2 Bridge) -->
-                    <article>
-                        <div class="project-media">
-                            <video class="w-full h-full object-cover" controls muted loop playsinline>
-                                <source src="assets/turtlebot.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">TurtleBot 3 Simulation with ROS 2 Bridge</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Built a simulation environment for the TurtleBot 3 in NVIDIA Isaac Sim, fully integrated with ROS 2. This setup included teleoperation control, publishing camera and Lidar data, and full visualization in RViz2, creating a complete digital twin for algorithm testing.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">NVIDIA Isaac Sim</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">ROS 2</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">TurtleBot3</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">RViz2</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Lidar</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+        // --- 3. ORIGINAL SCRIPT (Scroll Reveal) ---
+        // This runs *after* the content has been injected,
+        // so it will find all the '.reveal' elements correctly.
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
 
-                    <!-- Project 14: TurtleBot Trajectory Tracker (Gazebo) -->
-                    <article>
-                        <div class="project-media">
-                            <video class="w-full h-full object-cover" controls muted loop playsinline>
-                                <source src="assets/turtlebot2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">TurtleBot Waypoint Trajectory Tracker (Gazebo)</h3>
-                        <div class="text-gray-600 leading-relaxed mb-4 project-description">
-                            <p>A complete autonomous navigation pipeline in ROS 2 for a TurtleBot in Gazebo. The system takes discrete waypoints and intelligently navigates, respecting the robot's physical limits.</p>
-                            
-                            <h4>System Components</h4>
-                            <ul>
-                                <li><strong>Path Smoother:</strong> Uses Natural Cubic Splines to transform coarse waypoints into a smooth, continuous geometric path.</li>
-                                <li><strong>Trajectory Generator:</strong> Creates a time-parameterized trajectory with a Trapezoidal Velocity Profile, ensuring the robot respects velocity, acceleration, and curvature limits (slowing down on turns).</li>
-                                <li><strong>Trajectory Tracker:</strong> Implements a Pure Pursuit controller to calculate and publish <code>/cmd_vel</code> messages, enabling the robot to follow the generated trajectory accurately.</li>
-                            </ul>
-                            <p>The entire system is visualized in RViz, showing the waypoints, the smoothed path, and the robot's real-time tracking.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">ROS 2</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Gazebo</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">RViz2</span>
-                            <span class.="tech-tag text-xs font-mono px-3 py-1 rounded-full">Pure Pursuit</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Cubic Spline</span>
-                            <span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">Navigation</span>
-                        </div>
-                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>
-                    </article>
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
 
-                </div>
-
-            </div>
-        </section>
-
-        <!-- AI Project Explainer Section (REMOVED) -->
-        <!-- 
-        <section id="ai-explainer" class="py-24 reveal">
-            ...
-        </section> 
-        -->
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-32 text-center reveal">
-            <div class="max-w-xl mx-auto">
-                <h2 class="text-xl font-medium text-accent mb-4">What's Next?</h2>
-                <h3 class="text-5xl font-bold text-gray-900 mb-6">Get In Touch</h3>
-                <p class="text-lg text-gray-600 leading-relaxed mb-10">
-                    I'm always open to discussing new projects, opportunities in robotics and AI, or just connecting. My inbox is always open!
-                </p>
-                <a href="mailto:gaganhm08@gmail.com" class="px-10 py-5 text-lg font-medium text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
-                    Say Hello
-                </a>
-            </div>
-        </section>
-
-    </main>
-    
-    <!-- Footer -->
-    <footer class="py-8 border-t border-gray-200">
-        <div class="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row justify-between items-center text-gray-500">
-            <!-- Social Links -->
-            <div class="flex space-x-6 mb-4 md:mb-0">
-                <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/gaganv20" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-            </div>
-            <p class="text-sm">
-                Designed & Built by Gagan V
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // --- Mobile Navigation Toggle ---
-        const navToggle = document.getElementById('mobile-nav-toggle');
-        const navMenu = document.getElementById('mobile-nav-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('-translate-x-full');
-                // Toggle hamburger icon to X
-                if (navMenu.classList.contains('-translate-x-full')) {
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
-                } else {
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
-                }
-            });
-
-            // Close menu when a link is clicked
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.add('-translate-x-full');
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
-                });
-            });
-        }
-
-        // --- Scroll Reveal Animation ---
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        });
-
-        revealElements.forEach(el => {
-            observer.observe(el);
-        });
-
-    </script>
+    </script>
 </body>
 </html>
-
