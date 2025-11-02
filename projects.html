@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Archive - Gagan V</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* slate-900 */
+            color: #CBD5E1; /* slate-300 */
+        }
+
+        /* Custom accent color */
+        .text-accent {
+            color: #38BDF8; /* sky-400 */
+        }
+        .bg-accent {
+            background-color: #38BDF8;
+        }
+        .border-accent {
+            border-color: #38BDF8;
+        }
+        
+        /* Glassmorphism Navbar */
+        .glass-nav {
+            background-color: rgba(15, 23, 42, 0.8); /* slate-900 with 80% opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with 50% opacity */
+        }
+
+        /* Section heading line */
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #38BDF8; /* sky-400 */
+            margin-top: 8px;
+        }
+        
+        /* Tech Tag */
+        .tech-tag {
+            background-color: #1E293B; /* slate-800 */
+            color: #38BDF8; /* sky-400 */
+            border: 1px solid #38BDF8;
+        }
+
+        /* --- NEW STYLES FOR ARCHIVE TABLE --- */
+        .project-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .project-table th, .project-table td {
+            padding: 1.25rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #334155; /* slate-700 */
+            vertical-align: top;
+        }
+        .project-table th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #94A3B8; /* slate-400 */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        /* Make table responsive on mobile */
+        @media (max-width: 768px) {
+            .project-table thead {
+                display: none;
+            }
+            .project-table tr {
+                display: block;
+                margin-bottom: 2rem;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                border: 1px solid #334155;
+            }
+            .project-table td {
+                display: block;
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border-bottom: 1px dotted #334155;
+            }
+            .project-table td:last-child {
+                border-bottom: 0;
+            }
+            .project-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1rem;
+                width: calc(50% - 2rem);
+                padding-right: 10px;
+                text-align: left;
+                font-weight: 600;
+                color: #94A3B8; /* slate-400 */
+                text-transform: uppercase;
+                font-size: 0.75rem;
+            }
+        }
+        
+        .project-table .project-year {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            color: #CBD5E1; /* slate-300 */
+            font-weight: 500;
+        }
+        .project-table .project-title {
+            font-weight: 600;
+            color: #F1F5F9; /* slate-100 */
+        }
+        .project-table .project-tech {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            color: #CBD5E1; /* slate-300 */
+            line-height: 1.6;
+        }
+        .project-table .project-link a {
+            color: #38BDF8; /* sky-400 */
+            font-weight: 500;
+        }
+        .project-table .project-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="glass-nav sticky top-0 z-50">
+        <nav class="container mx-auto max-w-6xl px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Name (Links back to home) -->
+            <a href="index.html" class="text-2xl font-bold text-white">
+                Gagan V<span class="text-accent">.</span>
+            </a>
+            
+            <!-- Mobile Nav Button (hidden on desktop) -->
+            <button id="mobile-nav-toggle" class="md:hidden text-white z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            
+            <!-- Desktop Nav Links (Links back to home sections) -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html#about" class="text-slate-300 hover:text-accent transition duration-300">About</a>
+                <a href="index.html#experience" class="text-slate-300 hover:text-accent transition duration-300">Experience</a>
+                <a href="index.html#projects" class="text-slate-300 hover:text-accent transition duration-300">Projects</a>
+                <a href="index.html#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-slate-900 transition duration-300">
+                    Contact
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Mobile Nav Menu (hidden by default) -->
+        <div id="mobile-nav-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-slate-900 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="index.html#about" class="text-2xl text-slate-300 hover:text-accent transition duration-300 mobile-link">About</a>
+                <a href="index.html#experience" class="text-2xl text-slate-300 hover:text-accent transition duration-300 mobile-link">Experience</a>
+                <a href="index.html#projects" class="text-2xl text-slate-300 hover:text-accent transition duration-300 mobile-link">Projects</a>
+                <a href="index.html#contact" class="text-2xl px-6 py-3 text-accent border border-accent rounded-md hover:bg-accent hover:text-slate-900 transition duration-300 mobile-link">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto max-w-6xl px-6">
+
+        <!-- Archive Section -->
+        <section id="archive" class="py-24 min-h-[90vh]">
+            <a href="index.html" class="text-accent hover:underline mb-8 inline-block">&larr; Back to Home</a>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-100 mb-12">Project Archive</h1>
+
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Title</th>
+                        <th>Built with</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Project 1 -->
+                    <tr>
+                        <td data-label="Year" class="project-year">2024</td>
+                        <td data-label="Title" class="project-title">Natural Language Robot Control</td>
+                        <td data-label="Built with" class="project-tech">Python, ROS 2, LLM, Gazebo, MongoDB</td>
+                        <td data-label="Link" class="project-link">
+                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </td>
+                    </tr>
+                    <!-- Project 2 -->
+                    <tr>
+                        <td data-label="Year" class="project-year">2024</td>
+                        <td data-label="Title" class="project-title">Robotic Pick & Place with RL</td>
+                        <td data-label="Built with" class="project-tech">Python, Reinforcement Learning, PPO, PyBullet</td>
+                        <td data-label="Link" class="project-link">
+                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </td>
+                    </tr>
+                    <!-- Project 3 -->
+                    <tr>
+                        <td data-label="Year" class="project-year">2024</td>
+                        <td data-label="Title" class="project-title">High-Performance S&R UAV</td>
+                        <td data-label="Built with" class="project-tech">SolidWorks, Fusion 360, UAV Design</td>
+                        <td data-label="Link" class="project-link">
+                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </td>
+                    </tr>
+                    <!-- Project 4 -->
+                    <tr>
+                        <td data-label="Year" class="project-year">2024</td>
+                        <td data-label="Title" class="project-title">Robotic Action Duration Prediction</td>
+                        <td data-label="Built with" class="project-tech">Machine Learning, Python, Scikit-learn, RFECV</td>
+                        <td data-label="Link" class="project-link">
+                            <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </td>
+                    </tr>
+
+                    <!-- --- ADD YOUR 20+ PROJECTS BELOW --- -->
+                    <!-- Placeholder Project 1 -->
+                    <tr>
+                        <td data-label="Year" class="project-year">2023</td>
+                        <td data-label="Title" class="project-title">Placeholder Project Title</td>
+                        <td data-label="Built with" class="project-tech">Tech 1, Tech 2, Tech 3</td>
+                        <td data-label="Link" class="project-link">
+                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </td>
+                    </tr>
+                    <!-- Placeholder Project 2 -->
+                    <tr>
+                        <td data-label="Year" class="project-year">2023</td>
+                        <td data-label="Title" class="project-title">Another Cool Project</td>
+                        <td data-label="Built with" class="project-tech">ROS, C++, OpenCV</td>
+                        <td data-label="Link" class="project-link">
+                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </td>
+                    </tr>
+                    <!-- Placeholder Project 3 -->
+                    <tr>
+                        <td data-label="Year" class="project-year">2022</td>
+                        <td data-label="Title" class="project-title">Early University Project</td>
+                        <td data-label="Built with" class="project-tech">MATLAB, Simulink</td>
+                        <td data-label="Link" class="project-link">
+                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800">
+        <div class="container mx-auto max-w-6xl px-6 flex flex-col md:flex-row justify-between items-center text-slate-500">
+            <!-- Social Links -->
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/gaganv20" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            <p class="text-sm">
+                Designed & Built by Gagan V
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Navigation Toggle ---
+        const navToggle = document.getElementById('mobile-nav-toggle');
+        const navMenu = document.getElementById('mobile-nav-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('-translate-x-full');
+                // Toggle hamburger icon to X
+                if (navMenu.classList.contains('-translate-x-full')) {
+                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
+                } else {
+                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+                }
+            });
+
+            // Close menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // This will navigate to the homepage section
+                });
+            });
+        }
+    </script>
+</body>
+</html>
