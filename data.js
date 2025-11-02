@@ -109,16 +109,6 @@ const allProjects = [
         github: 'https://github.com/Gagan-v04'
     },
     {
-        id: 'rl-pick-place',
-        title: 'Robotic Pick & Place with RL',
-        description: '<p>Trained a PPO reinforcement learning agent for a pick-and-place task in PyBullet. The agent controls a UR5 robot, using a state-based observation space and a shaped reward function.</p>',
-        mediaType: 'none',
-        mediaSrc: 'assets/Pick_place.mp4',
-        poster: 'assets/pick-place-poster.jpg', // Example poster
-        tags: ['Python', 'Reinforcement Learning', 'PPO', 'PyBullet'],
-        github: 'https://github.com/Gagan-v04'
-    },
-    {
         id: 'sar-uav',
         title: 'High-Performance S&R UAV',
         description: '<p>Engineered and fabricated a 25-kg heavy-lift quadcopter for search-and-rescue, achieving a 1.8 FOS ratio. This project won 1st Place in Technical Design at SUAS 2024.</p>',
