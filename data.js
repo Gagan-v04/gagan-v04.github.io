@@ -187,5 +187,18 @@ const allProjects = [
         poster: 'assets/turtlebot2.jpg', // Example poster
         tags: ['ROS 2', 'Gazebo', 'RViz2', 'Pure Pursuit', 'Cubic Spline', 'Navigation'],
         github: 'https://github.com/Gagan-v04'
+    },
+    {
+        id: 'isaaclab-mimic',
+        title: 'Teleoperation and Imitation Learning with Isaac Lab Mimic',
+        description: `<p>Developed a teleoperation and imitation learning pipeline using <b>NVIDIA Isaac Lab Mimic</b> to teach a Franka Emika Panda robot to stack cubes autonomously.</p>
+        <p>Collected expert demonstrations via teleoperation and used <b>Isaac Lab Mimic</b> to automatically generate synthetic datasets, scaling limited human demonstrations into large datasets for imitation learning. Trained a <b>Behavior Cloning (BC)</b> policy using <b>Robomimic</b>.</p>
+        <p>Implemented full pipeline: teleoperation → data collection (HDF5) → automatic data generation → policy training → result visualization and checkpoint evaluation.</p>`,
+        mediaType: 'video',
+        mediaSrc: 'assets/Imitation Learning.mp4',
+        poster: 'assets/Imitation Learning.jpg',
+        tags: ['NVIDIA Isaac Lab', 'Teleoperation', 'Imitation Learning', 'Franka Emika', 'Robomimic', 'XR'],
+        github: 'https://github.com/Gagan-v04'
     }
+
 ];
