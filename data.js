@@ -164,13 +164,11 @@ const allProjects = [
         id: 'keras-classifier',
         title: 'Keras Alphabet Classifier',
         description: 
-            // FIXED: Changed single quotes to backticks (`) for template literal
             `<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
             <h4>Features</h4>
             <ul>
                 <li>Data preprocessing and normalization of 28x28 grayscale images.</li>
                 <li>CNN architecture with convolutional, batch normalization, max pooling, dropout, and dense layers.</li>
-                <li>Training with categorical cross-entropy loss and Adam optimizer.</li>
                 <li>Model evaluation with accuracy metrics and visualization of training progress.</li>
             </ul>`,
         mediaType: 'none',
