@@ -301,8 +301,6 @@
 
     <script>
         // --- CONFIGURATION ---
-        // Add project IDs from data.js here to feature them on the main page.
-        // I've pre-selected 5 key projects for you.
         const FEATURED_PROJECT_IDS = [
             'schneider-cobot',
             'isaaclab-mimic',
@@ -366,7 +364,10 @@
                 return;
             }
             
-            const featuredProjects = allProjects.filter(p => FEATURED_PROJECT_IDS.includes(p.id));
+            const featuredProjects = allProjects
+            .filter(p => FEATURED_PROJECT_IDS.includes(p.id))
+            .sort((a, b) => FEATURED_PROJECT_IDS.indexOf(a.id) - FEATURED_PROJECT_IDS.indexOf(b.id));
+
             container.innerHTML = renderProjectHTML(featuredProjects);
         }
 

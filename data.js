@@ -47,84 +47,15 @@ const allProjects = [
         github: 'https://github.com/Gagan-v04'
     },
     {
-        id: 'franka-teleop',
-        title: 'Franka Arm Teleoperation in Isaac Sim',
-        description: '<p>Developed a teleoperation system to control a Franka Emika Panda arm within NVIDIA Isaac Sim using a Logitech Extreme 3D Pro Joystick. This project bridges physical joystick inputs to simulated robotic control for intuitive manipulation.</p>',
+        id: 'isaaclab-mimic',
+        title: 'Teleoperation and Imitation Learning with Isaac Lab Mimic',
+        description: `<p>Developed a teleoperation and imitation learning pipeline using <b>NVIDIA Isaac Lab Mimic</b> to teach a Franka Emika Panda robot to stack cubes autonomously.</p>
+        <p>Collected expert demonstrations via teleoperation and used <b>Isaac Lab Mimic</b> to automatically generate synthetic datasets, scaling limited human demonstrations into large datasets for imitation learning. Trained a <b>Behavior Cloning (BC)</b> policy using <b>Robomimic</b>.</p>
+        <p>Implemented full pipeline: teleoperation → data collection (HDF5) → automatic data generation → policy training → result visualization and checkpoint evaluation.</p>`,
         mediaType: 'video',
-        mediaSrc: 'assets/teleop.mp4',
-        poster: 'assets/teleop.jpg', // Example poster
-        tags: ['NVIDIA Isaac Sim', 'Python', 'Teleoperation', 'Robotics'],
-        github: 'https://github.com/Gagan-v04'
-    },
-    {
-        id: 'osm-router',
-        title: 'Flask-OSM-AStar-Router',
-        description: `
-            <p>A web application demonstrating A* pathfinding on OpenStreetMap (OSM) data for driving routes. This project uses Flask for the backend, Leaflet.js for the interactive map display, and calculates the estimated fastest driving route between two user-selected points, considering road types and speed limits.</p>
-        `, // <-- FIXED: Removed comma from inside the backticks
-        mediaType: 'image',
-        mediaSrc: 'assets/astar.png',
-        poster: '',
-        tags: ['Python', 'Flask', 'NetworkX', 'A* Algorithm', 'pyrosm', 'Leaflet.js'],
-        github: 'https://github.com/Gagan-v04'
-    },
-    {
-        id: 'keras-classifier',
-        title: 'Keras Alphabet Classifier',
-        description: 
-            // FIXED: Changed single quotes to backticks (`) for template literal
-            `<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
-            <h4>Features</h4>
-            <ul>
-                <li>Data preprocessing and normalization of 28x28 grayscale images.</li>
-                <li>CNN architecture with convolutional, batch normalization, max pooling, dropout, and dense layers.</li>
-                <li>Training with categorical cross-entropy loss and Adam optimizer.</li>
-                <li>Model evaluation with accuracy metrics and visualization of training progress.</li>
-            </ul>`,
-        mediaType: 'none',
-        mediaSrc: '',
-        poster: '',
-        tags: ['Python', 'Keras', 'TensorFlow', 'CNN', 'Computer Vision'],
-        github: 'https://github.com/Gagan-v04'
-    },
-    {
-        id: 'ocr-embeddings',
-        title: 'OCR & Image Embeddings for Price Prediction',
-        description: '<p>Developed an end-to-end machine learning pipeline to predict product prices. This project involved advanced feature engineering, text embeddings (SentenceTransformers), image embeddings (CLIP), and OCR (EasyOCR) to build a robust model.</p>',
-        mediaType: 'none', 
-        mediaSrc: '',
-        poster: '',
-        tags: ['Python', 'Machine Learning', 'CLIP', 'EasyOCR', 'XGBoost'],
-        github: 'https://github.com/Gagan-v04'
-    },
-    {
-        id: 'nlp-control',
-        title: 'Natural Language Robot Control',
-        description: '<p>Built a pipeline integrating voice input, AI planning, and robot execution in Gazebo. The system uses an LLM to interpret commands and MongoDB to manage task workflows.</p>',
-        mediaType: 'image',
-        mediaSrc: 'assets/nlp+ros2.png',
-        poster: '',
-        tags: ['Python', 'ROS 2', 'LLM', 'Gazebo', 'MongoDB'],
-        github: 'https://github.com/Gagan-v04'
-    },
-    {
-        id: 'sar-uav',
-        title: 'High-Performance S&R UAV',
-        description: '<p>Engineered and fabricated a 25-kg heavy-lift quadcopter for search-and-rescue, achieving a 1.8 FOS ratio. This project won 1st Place in Technical Design at SUAS 2024.</p>',
-        mediaType: 'image',
-        mediaSrc: 'assets/drone.jpg',
-        poster: '',
-        tags: ['SolidWorks', 'Fusion 360', 'UAV Design', 'Simulation'],
-        github: 'https://github.com/Gagan-v04'
-    },
-    {
-        id: 'action-prediction',
-        title: 'Robotic Action Duration Prediction',
-        description: '<p>Developed an ML model to predict robotic action duration from operational data. Employed automated feature selection (RFECV) and stacked ensembles to maximize accuracy.</p>',
-        mediaType: 'none',
-        mediaSrc: '',
-        poster: '',
-        tags: ['Machine Learning', 'Python', 'Scikit-learn', 'RFECV'],
+        mediaSrc: 'assets/Imitation Learning.mp4',
+        poster: 'assets/Imitation Learning.jpg',
+        tags: ['NVIDIA Isaac Lab', 'Teleoperation', 'Imitation Learning', 'Franka Emika', 'Robomimic', 'XR'],
         github: 'https://github.com/Gagan-v04'
     },
     {
@@ -188,16 +119,84 @@ const allProjects = [
         github: 'https://github.com/Gagan-v04'
     },
     {
-        id: 'isaaclab-mimic',
-        title: 'Teleoperation and Imitation Learning with Isaac Lab Mimic',
-        description: `<p>Developed a teleoperation and imitation learning pipeline using <b>NVIDIA Isaac Lab Mimic</b> to teach a Franka Emika Panda robot to stack cubes autonomously.</p>
-        <p>Collected expert demonstrations via teleoperation and used <b>Isaac Lab Mimic</b> to automatically generate synthetic datasets, scaling limited human demonstrations into large datasets for imitation learning. Trained a <b>Behavior Cloning (BC)</b> policy using <b>Robomimic</b>.</p>
-        <p>Implemented full pipeline: teleoperation → data collection (HDF5) → automatic data generation → policy training → result visualization and checkpoint evaluation.</p>`,
+        id: 'franka-teleop',
+        title: 'Franka Arm Teleoperation in Isaac Sim',
+        description: '<p>Developed a teleoperation system to control a Franka Emika Panda arm within NVIDIA Isaac Sim using a Logitech Extreme 3D Pro Joystick. This project bridges physical joystick inputs to simulated robotic control for intuitive manipulation.</p>',
         mediaType: 'video',
-        mediaSrc: 'assets/Imitation Learning.mp4',
-        poster: 'assets/Imitation Learning.jpg',
-        tags: ['NVIDIA Isaac Lab', 'Teleoperation', 'Imitation Learning', 'Franka Emika', 'Robomimic', 'XR'],
+        mediaSrc: 'assets/teleop.mp4',
+        poster: 'assets/teleop.jpg', // Example poster
+        tags: ['NVIDIA Isaac Sim', 'Python', 'Teleoperation', 'Robotics'],
+        github: 'https://github.com/Gagan-v04'
+    },
+    {
+        id: 'sar-uav',
+        title: 'High-Performance S&R UAV',
+        description: '<p>Engineered and fabricated a 25-kg heavy-lift quadcopter for search-and-rescue, achieving a 1.8 FOS ratio. This project won 1st Place in Technical Design at SUAS 2024.</p>',
+        mediaType: 'image',
+        mediaSrc: 'assets/drone.jpg',
+        poster: '',
+        tags: ['SolidWorks', 'Fusion 360', 'UAV Design', 'Simulation'],
+        github: 'https://github.com/Gagan-v04'
+    },
+    {
+        id: 'osm-router',
+        title: 'Flask-OSM-AStar-Router',
+        description: `
+            <p>A web application demonstrating A* pathfinding on OpenStreetMap (OSM) data for driving routes. This project uses Flask for the backend, Leaflet.js for the interactive map display, and calculates the estimated fastest driving route between two user-selected points, considering road types and speed limits.</p>
+        `, // <-- FIXED: Removed comma from inside the backticks
+        mediaType: 'image',
+        mediaSrc: 'assets/astar.png',
+        poster: '',
+        tags: ['Python', 'Flask', 'NetworkX', 'A* Algorithm', 'pyrosm', 'Leaflet.js'],
+        github: 'https://github.com/Gagan-v04'
+    },
+    {
+        id: 'nlp-control',
+        title: 'Natural Language Robot Control',
+        description: '<p>Built a pipeline integrating voice input, AI planning, and robot execution in Gazebo. The system uses an LLM to interpret commands and MongoDB to manage task workflows.</p>',
+        mediaType: 'image',
+        mediaSrc: 'assets/nlp+ros2.png',
+        poster: '',
+        tags: ['Python', 'ROS 2', 'LLM', 'Gazebo', 'MongoDB'],
+        github: 'https://github.com/Gagan-v04'
+    },
+    {
+        id: 'keras-classifier',
+        title: 'Keras Alphabet Classifier',
+        description: 
+            // FIXED: Changed single quotes to backticks (`) for template literal
+            `<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
+            <h4>Features</h4>
+            <ul>
+                <li>Data preprocessing and normalization of 28x28 grayscale images.</li>
+                <li>CNN architecture with convolutional, batch normalization, max pooling, dropout, and dense layers.</li>
+                <li>Training with categorical cross-entropy loss and Adam optimizer.</li>
+                <li>Model evaluation with accuracy metrics and visualization of training progress.</li>
+            </ul>`,
+        mediaType: 'none',
+        mediaSrc: '',
+        poster: '',
+        tags: ['Python', 'Keras', 'TensorFlow', 'CNN', 'Computer Vision'],
+        github: 'https://github.com/Gagan-v04'
+    },
+    {
+        id: 'ocr-embeddings',
+        title: 'OCR & Image Embeddings for Price Prediction',
+        description: '<p>Developed an end-to-end machine learning pipeline to predict product prices. This project involved advanced feature engineering, text embeddings (SentenceTransformers), image embeddings (CLIP), and OCR (EasyOCR) to build a robust model.</p>',
+        mediaType: 'none', 
+        mediaSrc: '',
+        poster: '',
+        tags: ['Python', 'Machine Learning', 'CLIP', 'EasyOCR', 'XGBoost'],
+        github: 'https://github.com/Gagan-v04'
+    },
+    {
+        id: 'action-prediction',
+        title: 'Robotic Action Duration Prediction',
+        description: '<p>Developed an ML model to predict robotic action duration from operational data. Employed automated feature selection (RFECV) and stacked ensembles to maximize accuracy.</p>',
+        mediaType: 'none',
+        mediaSrc: '',
+        poster: '',
+        tags: ['Machine Learning', 'Python', 'Scikit-learn', 'RFECV'],
         github: 'https://github.com/Gagan-v04'
     }
-
 ];
