@@ -7,10 +7,10 @@ const allExperience = [
         url: "https://sapienrobotics.in",
         range: "July 2025 – Present",
         bullets: [
-            "Leading cobot integration for a Schneider Electric automated picking system using a Lexium 12S cobot on an AR 250 AMR.",
-            "Using NVIDIA Isaac Sim for simulation, synthetic data generation, and domain randomization to train robust DL models.",
-            "Implementing YOLO v11 and ArUco markers for high-accuracy, real-time object detection and precision alignment."
+            "Developed and optimized reinforcement learning and motion planning pipelines in NVIDIA Isaac Sim and Isaac Lab.",
+            "Designed a vision-based pick-and-place system for automated industrial workflows."
         ]
+
     },
     {
         title: "Drone Manager & Structures Member",
@@ -19,7 +19,6 @@ const allExperience = [
         range: "Jan 2023 – Sept 2024",
         bullets: [
             "Led the design and fabrication of autonomous drones, including a 25-kg heavy-lift quadcopter for search-and-rescue.",
-            "Conducted design optimizations and aerodynamic simulations in Fusion 360 and SolidWorks.",
             "**Achievement:** Won 1st Place in Technical Design (out of 69 teams) at SUAS 2024 - Robonation."
         ]
     }
@@ -113,7 +112,7 @@ const allProjects = [
         title: 'High-Performance S&R UAV',
         description: '<p>Engineered and fabricated a 25-kg heavy-lift quadcopter for search-and-rescue, achieving a 1.8 FOS ratio. This project won 1st Place in Technical Design at SUAS 2024.</p>',
         mediaType: 'image',
-        mediaSrc: 'assets/drone.JPG',
+        mediaSrc: 'assets/drone.jpg',
         poster: '',
         tags: ['SolidWorks', 'Fusion 360', 'UAV Design', 'Simulation'],
         github: 'https://github.com/Gagan-v04'
