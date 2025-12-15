@@ -5,7 +5,7 @@ const allExperience = [
         title: "Robotics & Machine Learning Intern",
         company: "Sapien Robotics",
         url: "https://sapienrobotics.in",
-        range: "July 2025 – Present",
+        range: "July 2025 – November 2025",
         bullets: [
             "Developed and optimized reinforcement learning and motion planning pipelines in NVIDIA Isaac Sim and Isaac Lab.",
             "Designed a vision-based pick-and-place system for automated industrial workflows."
@@ -16,7 +16,7 @@ const allExperience = [
         title: "Drone Manager & Structures Member",
         company: "Edhitha Unmanned Aerial Systems",
         url: "https://www.linkedin.com/company/edhitha-uas/",
-        range: "Jan 2023 – Sept 2024",
+        range: "January 2023 – September 2024",
         bullets: [
             "Led the design and fabrication of autonomous drones, including a 25-kg heavy-lift quadcopter for search-and-rescue.",
             "**Achievement:** Won 1st Place in Technical Design (out of 69 teams) at SUAS 2024 - Robonation."
