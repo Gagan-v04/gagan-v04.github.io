@@ -4,7 +4,7 @@ const allExperience = [
     {
         title: "Robotics & Machine Learning Intern",
         company: "Sapien Robotics",
-        url: "https://sapienrobotics.in",
+        url: "https://sapienrobotics.ai",
         range: "July 2025 – November 2025",
         bullets: [
             "Developed and optimized reinforcement learning and motion planning pipelines in NVIDIA Isaac Sim and Isaac Lab.",
