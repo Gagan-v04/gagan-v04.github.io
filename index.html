@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,293 +8,285 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Base styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA; /* Light gray background */
-            color: #212529; /* Dark text */
-        }
-
-        /* Custom accent color (a subtle, professional blue) */
-        .text-accent {
-            color: #007BFF;
-        }
-        .bg-accent {
-            background-color: #007BFF;
-        }
-        .border-accent {
-            border-color: #007BFF;
-        }
-        
-        /* Light Navbar */
-        .light-nav {
-            background-color: rgba(248, 249, 250, 0.8); /* Light gray with 80% opacity */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid #DEE2E6; /* Light border */
-        }
-
-        /* Section heading line */
-        .section-heading::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #007BFF; /* Accent color */
-            margin-top: 8px;
-        }
-        
-        /* Tech Tag */
-        .tech-tag {
-            background-color: #E9ECEF; /* Light gray */
-            color: #495057; /* Darker gray text */
-            font-weight: 500;
-        }
-        
-        /* Scroll reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Timeline */
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 2rem;
-            border-left: 2px solid #DEE2E6; /* Light border */
-        }
-        .timeline-item:last-child {
-            border-left-color: transparent;
-            padding-bottom: 0;
-        }
-        .timeline-marker {
-            position: absolute;
-            left: -0.5rem; /* Adjust based on dot size */
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #007BFF; /* Accent */
-            border: 3px solid #F8F9FA; /* Background color */
-        }
-        
-        /* Project Media */
-        .project-media {
-            width: 100%;
-            height: 500px; /* Set a fixed height */
-            max-height: 500px; /* Enforce a max height */
-            border-radius: 0.5rem;
-            border: 1px solid #DEE2E6;
-            margin-bottom: 1.5rem;
-            background-color: #E9ECEF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6C757D;
-            overflow: hidden; /* Ensure video/img corners are rounded */
-        }
-        .project-media video {
-            width: 100%;
-            height: 100%; /* Fill the container */
-            border-radius: 0.5rem;
-            object-fit: cover; /* This will zoom and crop 9:16 videos */
-        }
-        .project-media img {
-            width: 100%;
-            height: 100%; /* Fill the container */
-            border-radius: 0.5rem;
-            object-fit: cover;
-        }
-        
-        /* --- FIX for 9:16 videos --- */
-        .project-media.is-vertical {
-            height: 600px; /* Taller container for vertical */
-            max-height: 70vh;
-        }
-        .project-media.is-vertical video {
-            object-fit: contain; /* 'contain' for vertical */
-        }
-        /* Fix for fullscreen */
-        video:fullscreen {
-            object-fit: contain !important;
-        }
-        video::-webkit-media-controls-fullscreen-button {
-            display: block; /* Ensure fullscreen button is always visible */
-        }
-
-        /* Project description formatting */
-        .project-description {
-            color: #495057; /* gray-700 */
-            line-height: 1.6;
-        }
-        .project-description h4 {
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* font-semibold */
-            color: #343A40; /* gray-800 */
-            margin-top: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        .project-description ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .project-description li {
-            margin-bottom: 0.25rem;
-        }
-        .project-description code {
-            font-family: monospace;
-            background-color: #E9ECEF;
-            padding: 0.1rem 0.3rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-        }
-
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="antialiased">
 
-    <header class="light-nav sticky top-0 z-50">
-        <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-900">
-                Gagan V<span class="text-accent">.</span>
+<body class="antialiased overflow-x-hidden selection:bg-red-500 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar"
+        style="background:#0D0D0D; border-bottom: 4px solid #FF1A2E;">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"
+                class="text-3xl font-extrabold font-heading tracking-tighter text-white hover:text-[#FF1A2E] transition-colors">
+                GAGAN V<span class="text-[#FF1A2E] text-4xl">.</span>
             </a>
-            
-            <button id="mobile-nav-toggle" class="md:hidden text-gray-900 z-50">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+
+            <button id="mobile-nav-toggle" class="md:hidden text-white z-50 p-2 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
             </button>
-            
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="text-gray-700 hover:text-accent transition duration-300">About</a>
-                <a href="#experience" class="text-gray-700 hover:text-accent transition duration-300">Experience</a>
-                <a href="#projects" class="text-gray-700 hover:text-accent transition duration-300">Projects</a>
-                <a href="#contact" class="px-5 py-2 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
-                    Contact
-                </a>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="nav-link" style="color:#fff;">About</a>
+                <a href="#experience" class="nav-link" style="color:#fff;">Experience</a>
+                <a href="#projects" class="nav-link" style="color:#fff;">Projects</a>
+                <a href="#contact" class="btn-primary py-2 px-6">Contact</a>
             </div>
         </nav>
-        
-        <div id="mobile-nav-menu" class="md:hidden absolute top-0 left-0 w-full h-screen bg-gray-50 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="#about" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">About</a>
-                <a href="#experience" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Experience</a>
-                <a href="#projects" class="text-2xl text-gray-700 hover:text-accent transition duration-300 mobile-link">Projects</a>
-                <a href="#contact" class="text-2xl px-6 py-3 text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300 mobile-link">
-                    Contact
-                </a>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-nav-menu"
+            class="md:hidden absolute top-[72px] left-0 w-full border-b-4 border-black transform -translate-y-[150%] transition-transform duration-300 ease-in-out z-40"
+            style="background:#FF1A2E;">
+            <div class="flex flex-col items-center justify-center py-10 space-y-8">
+                <a href="#about"
+                    class="text-3xl font-bold font-heading text-white hover:text-black mobile-link uppercase tracking-wider">About</a>
+                <a href="#experience"
+                    class="text-3xl font-bold font-heading text-white hover:text-black mobile-link uppercase tracking-wider">Experience</a>
+                <a href="#projects"
+                    class="text-3xl font-bold font-heading text-white hover:text-black mobile-link uppercase tracking-wider">Projects</a>
+                <a href="#contact"
+                    class="btn-outline btn-outline-white w-3/4 mobile-link mt-4 flex justify-center text-center">Contact</a>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto max-w-4xl px-6">
+    <main class="relative z-10 pt-28">
 
-        <section id="home" class="min-h-[80vh] flex flex-col justify-center py-20">
-            <div class="reveal max-w-3xl">
-                <h1 class="text-xl md:text-2xl text-accent font-medium mb-4">Myself</h1>
-                <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-4">Gagan V.</h2>
-                <h3 class="text-4xl md:text-6xl font-bold text-gray-500 mb-8">I build intelligent robots.</h3>
-                <p class="max-w-2xl text-lg text-gray-600 leading-relaxed mb-10">
-                    I'm a Robotics and Machine Learning Engineer based in Bengaluru, specializing in robotic simulation, computer vision, and autonomous systems. I'm passionate about integrating AI to create intelligent and adaptive robotic solutions.
+        <!-- ══ HERO ══ cream background ────────────────── -->
+        <section id="home"
+            class="section-light min-h-[88vh] flex flex-col justify-center py-12 relative overflow-hidden">
+            <!-- Decorative red bar left -->
+            <div class="absolute left-0 top-0 bottom-0 w-3" style="background:#FF1A2E;"></div>
+            <!-- Giant background number -->
+            <span class="section-num" style="right:2rem; top:50%; transform:translateY(-50%);">01</span>
+
+            <div class="container mx-auto px-8 sm:px-10 relative z-10">
+                <div class="max-w-5xl">
+                    <!-- Sticker stamp -->
+                    <div class="stamp stamp-red rotate-[-2deg] mb-8 inline-block">Passionate Engineer</div>
+
+                    <h1 class="huge-text font-black font-heading text-black mb-2 uppercase reveal">
+                        <span class="glitch-hover">I Build</span><br>
+                        <span class="text-outline"
+                            style="-webkit-text-stroke: 3px #FF1A2E; color:transparent;">Intelligent</span><br>
+                        <span class="glitch-hover" style="color:#FF1A2E;">Robots.</span>
+                    </h1>
+
+                    <div class="mt-10">
+                        <p class="max-w-lg text-xl text-gray-700 leading-relaxed font-medium border-l-4 pl-6 py-2 reveal"
+                            style="border-color:#FF1A2E;">
+                            Robotics and Machine Learning Engineer based in Bengaluru.
+                            Specializing in robotic simulation, computer vision, and autonomous systems driven by AI.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-5 mt-12 reveal">
+                        <a href="#projects" class="btn-primary text-xl">View My Work</a>
+                        <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer"
+                            class="btn-outline text-xl flex items-center gap-3">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stripe divider -->
+        <div class="stripe-divider"></div>
+
+        <!-- ══ MARQUEE ══ (double row) ───────────────────── -->
+        <div style="overflow:hidden; position:relative; z-index:1;">
+            <div class="marquee-container" style="margin:0;">
+                <div class="marquee-content">
+                    <span class="marquee-item">Robotics</span>
+                    <span class="marquee-item solid">★</span>
+                    <span class="marquee-item solid">Machine Learning</span>
+                    <span class="marquee-item">Computer Vision</span>
+                    <span class="marquee-item solid">★</span>
+                    <span class="marquee-item solid">Isaac Sim</span>
+                    <span class="marquee-item">ROS 2</span>
+                    <span class="marquee-item solid">★</span>
+                    <span class="marquee-item yellow">AI</span>
+                    <!-- dup for seamless loop -->
+                    <span class="marquee-item">Robotics</span>
+                    <span class="marquee-item solid">★</span>
+                    <span class="marquee-item solid">Machine Learning</span>
+                    <span class="marquee-item">Computer Vision</span>
+                    <span class="marquee-item solid">★</span>
+                    <span class="marquee-item solid">Isaac Sim</span>
+                    <span class="marquee-item">ROS 2</span>
+                    <span class="marquee-item solid">★</span>
+                    <span class="marquee-item yellow">AI</span>
+                </div>
+            </div>
+            <div class="marquee-container marquee-container-2" style="margin:0;">
+                <div class="marquee-content marquee-content-reverse">
+                    <span class="marquee-item">Autonomous Systems</span>
+                    <span class="marquee-item solid">◆</span>
+                    <span class="marquee-item solid">Motion Planning</span>
+                    <span class="marquee-item">Deep Learning</span>
+                    <span class="marquee-item solid">◆</span>
+                    <span class="marquee-item solid">YOLO</span>
+                    <span class="marquee-item">Franka Emika</span>
+                    <span class="marquee-item solid">◆</span>
+                    <span class="marquee-item solid">Simulation</span>
+                    <!-- dup -->
+                    <span class="marquee-item">Autonomous Systems</span>
+                    <span class="marquee-item solid">◆</span>
+                    <span class="marquee-item solid">Motion Planning</span>
+                    <span class="marquee-item">Deep Learning</span>
+                    <span class="marquee-item solid">◆</span>
+                    <span class="marquee-item solid">YOLO</span>
+                    <span class="marquee-item">Franka Emika</span>
+                    <span class="marquee-item solid">◆</span>
+                    <span class="marquee-item solid">Simulation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ ABOUT ══ black background ──────────────── -->
+        <div class="stripe-divider stripe-divider-yellow"></div>
+        <section id="about" class="section-dark py-28 relative overflow-hidden">
+            <span class="section-num">02</span>
+            <div class="container mx-auto px-8 sm:px-10 relative z-10">
+                <div class="mb-3 flex items-center gap-4">
+                    <div class="stamp stamp-yellow rotate-[1deg]">Who Am I</div>
+                    <div class="stamp stamp-red rotate-[-1deg]">Est. 2022</div>
+                </div>
+                <h2 class="section-heading text-white mb-10">ABOUT ME<span style="color:#FFE600;">.</span></h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main bio -->
+                    <div class="lg:col-span-2 brutal-block-dark p-8 sm:p-10 space-y-6 reveal">
+                        <p class="font-bold text-2xl text-white leading-relaxed">
+                            Hello! I'm Gagan, a passionate engineer with a strong foundation in Mechanical Engineering.
+                            My curiosity isn't just about how things are built—but how we can make them <span
+                                class="bg-[#FF1A2E] px-2 py-0.5">think, adapt, and interact</span> with the world
+                            intelligently.
+                        </p>
+                        <p class="text-gray-300 text-xl leading-relaxed">
+                            This drive led me to the intersection of physical systems and artificial intelligence.
+                            My work spans building autonomous systems, from high-performance search-and-rescue UAVs
+                            to sophisticated industrial cobots.
+                        </p>
+                        <div class="brutal-block-red p-5 rotate-[0.5deg]">
+                            <p class="text-white font-bold text-lg">
+                                Currently a Robotics &amp; ML Intern at
+                                <a href="https://sapienrobotics.ai" target="_blank" rel="noopener noreferrer"
+                                    class="underline decoration-4 underline-offset-4 hover:bg-white hover:text-black px-1 transition-colors">Sapien
+                                    Robotics</a>, leveraging
+                                <strong class="bg-black text-white px-2">NVIDIA Isaac Sim</strong>,
+                                <strong class="bg-black text-white px-2">ROS 2</strong>, and
+                                <strong class="bg-black text-white px-2">YOLO</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div class="stripe-divider stripe-divider-yellow"></div>
+
+        <!-- ══ EXPERIENCE ══ vivid red background ────────── -->
+        <section id="experience" class="section-red py-28 relative overflow-hidden">
+            <span class="section-num">03</span>
+            <div class="container mx-auto px-8 sm:px-10 relative z-10">
+                <div class="mb-3">
+                    <div class="stamp stamp-black rotate-[-1deg]">Work History</div>
+                </div>
+                <h2 class="section-heading text-white mb-10">EXPERIENCE<span style="color:#FFE600;">.</span></h2>
+                <div id="experience-timeline" class="relative max-w-5xl">
+                    <div class="text-center brutal-block p-6 font-bold text-lg animate-pulse"
+                        style="background:#FFE600;">
+                        Loading experience...</div>
+                </div>
+            </div>
+        </section>
+        <div class="stripe-divider"></div>
+
+        <!-- ══ PROJECTS ══ cream background ───────────── -->
+        <section id="projects" class="section-light py-28 relative overflow-hidden">
+            <span class="section-num">04</span>
+            <div class="container mx-auto px-8 sm:px-10 max-w-7xl relative z-10">
+                <div class="mb-3">
+                    <div class="stamp stamp-red rotate-[1deg]">Portfolio</div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                    <h2 class="section-heading mb-0">SELECTED WORK<span style="color:#FF1A2E;">.</span></h2>
+                    <a href="projects.html" class="btn-primary">View Full Archive &rarr;</a>
+                </div>
+                <div id="project-feed" class="space-y-16"></div>
+            </div>
+        </section>
+
+        <!-- Stripe before contact -->
+        <div class="stripe-divider"></div>
+
+        <!-- ══ CONTACT ══ black background ──────────────── -->
+        <section id="contact" class="section-dark py-36 relative overflow-hidden">
+            <span class="section-num">05</span>
+            <!-- Red diagonal accent -->
+            <div class="absolute top-0 left-0 w-full h-3" style="background:#FF1A2E;"></div>
+            <div class="absolute bottom-0 left-0 w-full h-3" style="background:#FF1A2E;"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+                <div class="stamp stamp-red mb-8 rotate-[-1deg] inline-block">Open to opportunities</div>
+                <h3 class="font-black font-heading text-white mb-8 tracking-tighter uppercase reveal"
+                    style="font-size: clamp(3.5rem, 10vw, 8rem); line-height:0.9; text-shadow: 6px 6px 0 #FF1A2E;">
+                    Let's<br>Build It.
+                </h3>
+                <p class="text-2xl text-gray-300 font-bold mb-10 reveal" style="transition-delay:100ms;">
+                    Exploring new opportunities in <span style="color:#FFE600;">robotics &amp; AI</span>.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#projects" class="px-8 py-4 text-lg font-medium text-center text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
-                        View My Work
-                    </a>
-                    <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
-                        View GitHub
+                <div class="reveal" style="transition-delay:200ms;">
+                    <a href="mailto:gaganhm08@gmail.com" class="btn-primary text-2xl py-6 px-16"
+                        style="box-shadow: 10px 10px 0 #FF1A2E; font-size:1.5rem;">
+                        SAY HELLO ↗
                     </a>
                 </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-24 reveal">
-            <div class="max-w-3xl">
-                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-12">About Me</h2>
-                <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
-                    <p>
-                        Hello! I'm Gagan, a passionate engineer with a strong foundation in Mechanical Engineering from Ramaiah Institute of Technology. My curiosity isn't just about how things are built, but how we can make them think, adapt, and interact with the world.
-                    </p>
-                    <p>
-                        This drive led me to the intersection of physical systems and artificial intelligence. My professional experience has been focused on building and simulating autonomous systems, from high-performance search-and-rescue UAVs to sophisticated industrial cobots.
-                    </p>
-                    <p>
-                        I'm currently a Robotics & ML Intern at <a href="https://sapienrobotics.ai" target="_blank" rel="noopener noreferrer" class="text-accent font-semibold hover:underline">Sapien Robotics</a>, where I'm leveraging tools like <strong class="text-gray-800">NVIDIA Isaac Sim</strong>, <strong class="text-gray-800">ROS 2</strong>, and <strong class="text-gray-800">YOLO</strong> to bring autonomous solutions to life.
-                    </p>
-                    <p>Here are a few of the key technologies I work with:</p>
-                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-sm text-gray-600">
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>Python & C++</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>ROS 2</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>NVIDIA Isaac Sim</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>NVIDIA Isaac Lab</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>Computer Vision</li>
-                        <li class="flex items-center"><span class="text-accent mr-2">▹</span>Motion Planning</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="py-24 reveal">
-            <div class="max-w-3xl">
-                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-16">Professional Experience</h2>
-                
-                <div id="experience-timeline" class="relative">
-                    <div class="text-center text-gray-500">Loading experience...</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-24 reveal">
-            <div class="max-w-3xl">
-                <h2 class="section-heading text-3xl font-bold text-gray-900 mb-16">Featured Projects</h2>
-                
-                <div id="project-feed" class="space-y-20">
-                    <div class="text-center text-gray-500">Loading projects...</div>
-                </div>
-
-                <div class="text-center mt-20 reveal">
-                    <a href="projects.html" class="px-8 py-4 text-lg font-medium text-center text-accent border border-accent rounded-md hover:bg-accent hover:text-white transition duration-300">
-                        More Projects
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-32 text-center reveal">
-            <div class="max-w-xl mx-auto">
-                <h3 class="text-5xl font-bold text-gray-900 mb-6">Get In Touch</h3>
-                <p class="text-lg text-gray-600 leading-relaxed mb-10">
-                    I'm always open to discussing new projects, opportunities in robotics and AI, or just connecting. My inbox is always open!
-                </p>
-                <a href="mailto:gaganhm08@gmail.com" class="px-10 py-5 text-lg font-medium text-white bg-accent rounded-md hover:bg-blue-600 transition duration-300">
-                    Say Hello
-                </a>
             </div>
         </section>
 
     </main>
-    
-    <footer class="py-8 border-t border-gray-200">
-        <div class="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row justify-between items-center text-gray-500">
-            <div class="flex space-x-6 mb-4 md:mb-0">
-                <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+
+    <footer class="py-12 border-t-4" style="background:#0D0D0D; border-color:#FF1A2E;">
+        <div
+            class="container mx-auto max-w-6xl px-6 flex flex-col md:flex-row justify-between items-center z-10 relative">
+            <div class="flex space-x-10 mb-8 md:mb-0">
+                <a href="https://github.com/Gagan-v04" target="_blank" rel="noopener noreferrer"
+                    class="text-white hover:text-[#FF1A2E] transition-transform hover:-translate-y-2 hover:scale-110 duration-300">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd" />
+                    </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/gaganv20" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <a href="https://www.linkedin.com/in/gaganv20" target="_blank" rel="noopener noreferrer"
+                    class="text-white hover:text-[#FF1A2E] transition-transform hover:-translate-y-2 hover:scale-110 duration-300">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
                 </a>
             </div>
-            <p class="text-sm">
-                Designed & Built by Gagan V
-            </p>
+            <div class="text-right">
+                <p class="text-4xl font-black font-heading tracking-tighter">GAGAN V.</p>
+                <p class="text-sm font-bold tracking-widest uppercase mt-2 text-gray-400">
+                    Designed & Built with <span class="text-[#E63946] text-lg">♥</span>
+                </p>
+            </div>
         </div>
     </footer>
 
@@ -309,166 +302,167 @@
             'turtlebot-isaac',
             'sar-uav'
         ];
-        // --- END CONFIGURATION ---
 
-
-        // --- Dynamic Content Rendering ---
         document.addEventListener('DOMContentLoaded', () => {
             renderExperience();
             renderFeaturedProjects();
-            initializeScrollReveal(); // Initialize reveal animations *after* content is loaded
+            // Run reveal AFTER dynamic content is injected
+            requestAnimationFrame(() => initializeScrollReveal());
+            setupNavbar();
         });
 
         function renderExperience() {
             const container = document.getElementById('experience-timeline');
-            if (!container) {
-                console.error("Error: Experience container '#experience-timeline' not found in index.html.");
-                return;
-            }
-            if (typeof allExperience === 'undefined') {
-                console.error("Error: 'allExperience' data not found. Make sure 'data.js' is loaded correctly before this script.");
-                container.innerHTML = '<p class="text-red-500">Error: Could not load experience data. Is data.js missing?</p>';
-                return;
-            }
+            if (typeof allExperience === 'undefined') return;
 
             let html = '';
-            allExperience.forEach(item => {
-                html += `
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="ml-4">
-                            <h3 class="text-xl font-semibold text-gray-900">${item.title}</h3>
-                            <h4 class="text-lg font-medium mb-1"><a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">${item.company}</a></h4>
-                            <span class="text-sm font-mono text-gray-500">${item.range}</span>
-                            <ul class="mt-4 space-y-3 text-gray-600 leading-relaxed">
-                                ${item.bullets.map(bullet => `
-                                    <li class="flex"><span class="text-accent mr-3 mt-1.5 flex-shrink-0">▹</span>${bullet.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                `;
-            });
+            for (let i = 0; i < allExperience.length; i++) {
+                const item = allExperience[i];
+                let bulletsHtml = '';
+                for (let j = 0; j < item.bullets.length; j++) {
+                    const raw = item.bullets[j];
+                    // Achievement lines get a special callout box
+                    if (raw.startsWith('**')) {
+                        const clean = raw.replace(/^\*\*(.*?)\*\*:?\s*/, '');
+                        const label = raw.match(/^\*\*(.*?)\*\*/)?.[1] || 'Note';
+                        bulletsHtml += '<li class="mt-4 mb-2"><div class="flex items-start gap-3 border-l-4 pl-4 py-2" style="border-color:#FFE600; background:rgba(0,0,0,0.15);"><span style="color:#FFE600; font-size:1.3rem; flex-shrink:0;">🏆</span><span class="font-bold text-white">' + label + ': <span class="font-medium">' + clean + '</span></span></div></li>';
+                    } else {
+                        bulletsHtml += '<li class="flex items-start mb-3"><span style="color:#FFE600;" class="mr-3 mt-1 flex-shrink-0 font-bold">—</span><span class="font-medium text-black">' + raw + '</span></li>';
+                    }
+                }
+
+                html += '<div class="timeline-item reveal" style="transition-delay: ' + (i * 100) + 'ms">' +
+                    '<div class="timeline-marker"></div>' +
+                    '<div class="brutal-block p-6 sm:p-10 ml-4 group relative overflow-hidden">' +
+                    '<h3 class="text-2xl sm:text-4xl font-extrabold font-heading text-black uppercase">' + item.title + '</h3>' +
+                    '<h4 class="text-xl font-bold mb-6 mt-2"><a href="' + item.url + '" target="_blank" rel="noopener noreferrer" class="text-[#E63946] hover:text-black hover:bg-[#E63946] px-1 transition-colors underline decoration-4 underline-offset-4">' + item.company + '</a></h4>' +
+                    '<span class="inline-block px-4 py-2 bg-black text-white text-sm font-bold font-mono rounded-none mb-8 border-2 border-black rotate-1">' + item.range + '</span>' +
+                    '<ul class="text-black text-lg sm:text-xl leading-relaxed">' + bulletsHtml + '</ul>' +
+                    '</div>' +
+                    '</div>';
+            }
             container.innerHTML = html;
         }
 
         function renderFeaturedProjects() {
             const container = document.getElementById('project-feed');
-            if (!container) {
-                console.error("Error: Project container '#project-feed' not found in index.html.");
-                return;
-            }
-            if (typeof allProjects === 'undefined') {
-                console.error("Error: 'allProjects' data not found. Make sure 'data.js' is loaded correctly before this script.");
-                container.innerHTML = '<p class="text-red-500">Error: Could not load project data. Is data.js missing?</p>';
-                return;
-            }
-            
+            if (typeof allProjects === 'undefined') return;
+
             const featuredProjects = allProjects
-            .filter(p => FEATURED_PROJECT_IDS.includes(p.id))
-            .sort((a, b) => FEATURED_PROJECT_IDS.indexOf(a.id) - FEATURED_PROJECT_IDS.indexOf(b.id));
+                .filter(p => FEATURED_PROJECT_IDS.includes(p.id))
+                .sort((a, b) => FEATURED_PROJECT_IDS.indexOf(a.id) - FEATURED_PROJECT_IDS.indexOf(b.id));
 
             container.innerHTML = renderProjectHTML(featuredProjects);
         }
 
-        // This function is also used by projects.html
         function renderProjectHTML(projectList) {
-            if (!projectList || projectList.length === 0) {
-                 return '<p class="text-gray-500">No projects to display.</p>';
-            }
-            
             let html = '';
-            projectList.forEach(project => {
-                html += `
-                    <article class="reveal">
-                        ${createMediaBlock(project)}
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">${project.title}</h3>
-                        <div class="text-gray-600 leading-relaxed mb-4 project-description">
-                            ${project.description}
-                        </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            ${project.tags.map(tag => `<span class="tech-tag text-xs font-mono px-3 py-1 rounded-full">${tag}</span>`).join('')}
-                        </div>
-                        ${project.github ? `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="text-accent font-medium hover:underline">View on GitHub &rarr;</a>` : ''}
-                    </article>
-                `;
-            });
+            for (let i = 0; i < projectList.length; i++) {
+                const project = projectList[i];
+
+                let tagsHtml = '';
+                for (let j = 0; j < project.tags.length; j++) {
+                    tagsHtml += '<span class="tech-tag">' + project.tags[j] + '</span>';
+                }
+
+                const ghIcon = '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>';
+
+                let githubHtml = project.github
+                    ? '<a href="' + project.github + '" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background:#000;">' + ghIcon + 'View on GitHub</a>'
+                    : '';
+
+                html +=
+                    '<article class="project-card reveal">' +
+                    createMediaBlock(project) +
+                    '<div class="project-card-content">' +
+                    '<h3 class="project-card-title">' + project.title + '</h3>' +
+                    '<div class="project-card-desc">' + project.description + '</div>' +
+                    '<div class="project-card-tags">' + tagsHtml + '</div>' +
+                    (githubHtml ? '<div class="project-card-footer">' + githubHtml + '</div>' : '') +
+                    '</div>' +
+                    '</article>';
+            }
             return html;
         }
 
         function createMediaBlock(project) {
             if (project.mediaType === 'video' && project.mediaSrc) {
-                // Check if the video source is 9:16 (vertical)
                 const isVertical = project.aspect === '9:16';
-                const containerClass = isVertical ? 'project-media is-vertical' : 'project-media';
-
-                return `
-                    <div class="${containerClass}">
-                        <video class="w-full h-full" controls muted loop playsinline poster="${project.poster || ''}">
-                            <source src="${project.mediaSrc}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                `;
+                const wrapClass = 'project-media-wrapper' + (isVertical ? ' is-vertical' : '');
+                return '<div class="' + wrapClass + '">' +
+                    '<video controls muted loop playsinline poster="' + (project.poster || '') + '" style="width:100%;height:100%;display:block;object-fit:' + (isVertical ? 'contain' : 'cover') + ';">' +
+                    '<source src="' + project.mediaSrc + '" type="video/mp4">' +
+                    '</video>' +
+                    '</div>';
             } else if (project.mediaType === 'image' && project.mediaSrc) {
-                return `
-                    <a href="${project.github || '#'}" target="_blank" rel="noopener noreferrer" class="block project-media">
-                        <img src="${project.mediaSrc}" alt="${project.title}" class="w-full h-full object-cover">
-                    </a>
-                `;
-            } else {
-                // No media block if mediaType is 'none' or src is missing
-                return '';
+                return '<div class="project-media-wrapper">' +
+                    '<img src="' + project.mediaSrc + '" alt="' + project.title + '" style="width:100%;height:100%;display:block;object-fit:cover;">' +
+                    '</div>';
             }
+            return '<div class="project-media-wrapper" style="background:#eee;display:flex;align-items:center;justify-content:center;"><span style="font-weight:700;font-size:1.25rem;text-transform:uppercase;color:#999;">No Preview</span></div>';
         }
 
+        // Mobile Nav and Scroll Logic
+        function setupNavbar() {
+            const navToggle = document.getElementById('mobile-nav-toggle');
+            const navMenu = document.getElementById('mobile-nav-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const navInner = document.getElementById('navbar');
 
-        // --- Mobile Navigation Toggle ---
-        const navToggle = document.getElementById('mobile-nav-toggle');
-        const navMenu = document.getElementById('mobile-nav-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+            let isMenuOpen = false;
 
-        if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('-translate-x-full');
-                // Toggle hamburger icon to X
-                if (navMenu.classList.contains('-translate-x-full')) {
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    navMenu.classList.remove('-translate-y-[150%]');
+                    navMenu.classList.add('translate-y-0');
+                    navToggle.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>';
                 } else {
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+                    navMenu.classList.add('-translate-y-[150%]');
+                    navMenu.classList.remove('translate-y-0');
+                    navToggle.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
                 }
             });
 
-            // Close menu when a link is clicked
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    navMenu.classList.add('-translate-x-full');
-                    navToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
+                    isMenuOpen = false;
+                    navMenu.classList.add('-translate-y-[150%]');
+                    navMenu.classList.remove('translate-y-0');
+                    navToggle.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
                 });
+            });
+
+            // Shadow on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    navInner.classList.add('shadow-[0_4px_0_0_rgba(0,0,0,1)]');
+                } else {
+                    navInner.classList.remove('shadow-[0_4px_0_0_rgba(0,0,0,1)]');
+                }
             });
         }
 
-        // --- Scroll Reveal Animation ---
         function initializeScrollReveal() {
             const revealElements = document.querySelectorAll('.reveal');
-            if (revealElements.length === 0) return;
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('reveal-visible');
-                        observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            });
+            }, { threshold: 0.1 });
 
             revealElements.forEach(el => {
-                observer.observe(el);
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('reveal-visible');
+                } else {
+                    observer.observe(el);
+                }
             });
         }
-
     </script>
 </body>
+
 </html>

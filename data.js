@@ -163,7 +163,7 @@ const allProjects = [
     {
         id: 'keras-classifier',
         title: 'Keras Alphabet Classifier',
-        description: 
+        description:
             `<p>This project implements a Convolutional Neural Network (CNN) for recognizing handwritten English alphabets (A-Z) using the Kaggle A-Z Handwritten Data dataset.</p>
             <h4>Features</h4>
             <ul>
@@ -181,7 +181,7 @@ const allProjects = [
         id: 'ocr-embeddings',
         title: 'OCR & Image Embeddings for Price Prediction',
         description: '<p>Developed an end-to-end machine learning pipeline to predict product prices. This project involved advanced feature engineering, text embeddings (SentenceTransformers), image embeddings (CLIP), and OCR (EasyOCR) to build a robust model.</p>',
-        mediaType: 'none', 
+        mediaType: 'none',
         mediaSrc: '',
         poster: '',
         tags: ['Python', 'Machine Learning', 'CLIP', 'EasyOCR', 'XGBoost'],
