@@ -169,31 +169,11 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Main bio -->
-                    <div class="lg:col-span-2 brutal-block-dark p-8 sm:p-10 space-y-6 reveal">
-                        <p class="font-bold text-2xl text-white leading-relaxed">
-                            Hello! I'm Gagan, a passionate engineer with a strong foundation in Mechanical Engineering.
-                            My curiosity isn't just about how things are built—but how we can make them <span
-                                class="bg-[#FF1A2E] px-2 py-0.5">think, adapt, and interact</span> with the world
-                            intelligently.
-                        </p>
-                        <p class="text-gray-300 text-xl leading-relaxed">
-                            This drive led me to the intersection of physical systems and artificial intelligence.
-                            My work spans building autonomous systems, from high-performance search-and-rescue UAVs
-                            to sophisticated industrial cobots.
-                        </p>
-                        <div class="brutal-block-red p-5 rotate-[0.5deg]">
-                            <p class="text-white font-bold text-lg">
-                                Currently a Robotics &amp; ML Intern at
-                                <a href="https://sapienrobotics.ai" target="_blank" rel="noopener noreferrer"
-                                    class="underline decoration-4 underline-offset-4 hover:bg-white hover:text-black px-1 transition-colors">Sapien
-                                    Robotics</a>, leveraging
-                                <strong class="bg-black text-white px-2">NVIDIA Isaac Sim</strong>,
-                                <strong class="bg-black text-white px-2">ROS 2</strong>, and
-                                <strong class="bg-black text-white px-2">YOLO</strong>.
-                            </p>
-                        </div>
+                    <div id="about-content" class="lg:col-span-2 brutal-block-dark p-8 sm:p-10 space-y-6 reveal">
+                        <!-- Content injected via data.js -->
+                        <div class="text-center p-6 font-bold text-lg animate-pulse" style="color:#FFE600;">Loading
+                            bio...</div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -247,9 +227,6 @@
                     style="font-size: clamp(3.5rem, 10vw, 8rem); line-height:0.9; text-shadow: 6px 6px 0 #FF1A2E;">
                     Let's<br>Build It.
                 </h3>
-                <p class="text-2xl text-gray-300 font-bold mb-10 reveal" style="transition-delay:100ms;">
-                    Exploring new opportunities in <span style="color:#FFE600;">robotics &amp; AI</span>.
-                </p>
                 <div class="reveal" style="transition-delay:200ms;">
                     <a href="mailto:gaganhm08@gmail.com" class="btn-primary text-2xl py-6 px-16"
                         style="box-shadow: 10px 10px 0 #FF1A2E; font-size:1.5rem;">
@@ -282,7 +259,7 @@
                 </a>
             </div>
             <div class="text-right">
-                <p class="text-4xl font-black font-heading tracking-tighter">GAGAN V.</p>
+                <p class="text-4xl font-black font-heading tracking-tighter" style="color:#FF1A2E;">GAGAN V.</p>
                 <p class="text-sm font-bold tracking-widest uppercase mt-2 text-gray-400">
                     Designed & Built with <span class="text-[#E63946] text-lg">♥</span>
                 </p>
@@ -290,7 +267,7 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
+    <script src="data.js?v=1.3"></script>
 
     <script>
         // --- CONFIGURATION ---
@@ -304,12 +281,20 @@
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
+            renderAbout();
             renderExperience();
             renderFeaturedProjects();
             // Run reveal AFTER dynamic content is injected
             requestAnimationFrame(() => initializeScrollReveal());
             setupNavbar();
         });
+
+        function renderAbout() {
+            const container = document.getElementById('about-content');
+            if (typeof aboutData !== 'undefined' && container) {
+                container.innerHTML = aboutData;
+            }
+        }
 
         function renderExperience() {
             const container = document.getElementById('experience-timeline');
@@ -324,10 +309,12 @@
                     // Achievement lines get a special callout box
                     if (raw.startsWith('**')) {
                         const clean = raw.replace(/^\*\*(.*?)\*\*:?\s*/, '');
-                        const label = raw.match(/^\*\*(.*?)\*\*/)?.[1] || 'Note';
-                        bulletsHtml += '<li class="mt-4 mb-2"><div class="flex items-start gap-3 border-l-4 pl-4 py-2" style="border-color:#FFE600; background:rgba(0,0,0,0.15);"><span style="color:#FFE600; font-size:1.3rem; flex-shrink:0;">🏆</span><span class="font-bold text-white">' + label + ': <span class="font-medium">' + clean + '</span></span></div></li>';
+                        // Extract label text and remove any trailing colon from the match
+                        const rawLabel = raw.match(/^\*\*(.*?)\*\*/)?.[1] || 'Note';
+                        const label = rawLabel.replace(/:$/, '');
+                        bulletsHtml += '<li class="mt-4 mb-2"><div class="flex items-start gap-3 border-l-4 pl-4 py-2" style="border-color:#FF1A2E; background:rgba(255,26,46,0.1);"><span class="font-bold text-black" style="color:#FF1A2E;">' + label + ':</span> <span class="font-medium text-black">' + clean + '</span></div></li>';
                     } else {
-                        bulletsHtml += '<li class="flex items-start mb-3"><span style="color:#FFE600;" class="mr-3 mt-1 flex-shrink-0 font-bold">—</span><span class="font-medium text-black">' + raw + '</span></li>';
+                        bulletsHtml += '<li class="flex items-start mb-3"><span style="color:#FF1A2E;" class="mr-3 mt-1 flex-shrink-0 font-bold">—</span><span class="font-medium text-black">' + raw + '</span></li>';
                     }
                 }
 

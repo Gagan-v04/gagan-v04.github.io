@@ -1,6 +1,53 @@
+// --- ABOUT ME DATA ---
+// You can edit the main bio text here
+const aboutData = `
+<p class="font-bold text-2xl text-white leading-relaxed">
+    Hello! I'm Gagan, a passionate person driven to build automation and intelligent systems.
+    My curiosity isn't just about how things are built—but how we can make them <span
+        class="bg-[#FF1A2E] px-2 py-0.5">think, adapt, and interact</span> with the world
+    autonomously.
+</p>
+<p class="text-gray-300 text-xl leading-relaxed">
+    This drive led me to the intersection of physical systems and artificial intelligence.
+    My work spans building AI Agents and autonomous systems, from high-performance search-and-rescue UAVs
+    to sophisticated industrial cobots.
+</p>
+<div class="brutal-block-red p-5 rotate-[0.5deg]">
+    <p class="text-white font-bold text-lg">
+        Currently a Software Intern at
+        <a href="https://www.abb.com/global/en" target="_blank" rel="noopener noreferrer"
+            class="underline decoration-4 underline-offset-4 hover:bg-white hover:text-black px-1 transition-colors">ABB</a>, 
+        building multi-agent systems for
+        <strong class="bg-black text-white px-2">Autonomous RCA</strong> and
+        <strong class="bg-black text-white px-2">Edge Production</strong> environments.
+    </p>
+</div>
+`;
+
 // --- EXPERIENCE DATA ---
 // Add your professional experience here
 const allExperience = [
+    {
+        title: "Software Intern",
+        company: "ABB",
+        url: "https://www.abb.com/global/en",
+        range: "February 2026 – Present",
+        bullets: [
+            "Building a cloud-hosted multi-agent orchestration framework autonomous RCA across edge production environments, significantly accelerating ticket handling and field diagnostic workflows.",
+            "Developing A2A tool-calling over MCP to cross-correlate live state across Kubernetes, Docker, MongoDB, CrateDB, and Azure CosmosDB, surfacing sync drift and data integrity anomalies in real time."
+        ]
+    },
+    {
+        title: "Robotics Software Intern",
+        company: "Origin",
+        url: "https://origin.tech/",
+        range: "January 2026",
+        bullets: [
+            "Developed on an industrial simulation platform in NVIDIA Isaac Sim, configuring a high-fidelity digital twin of a production robot for testing autonomous behaviours.",
+            "Automated an end-to-end pipeline to convert 3D CAD models into simulation-ready USD assets, eliminating manual mesh preparation and significantly reducing asset onboarding time.",
+            "Programmatically generated semantic action blocks on wall geometry, enabling structured robot task planning and spatial interaction within the simulation scene."
+        ]
+    },
     {
         title: "Robotics & Machine Learning Intern",
         company: "Sapien Robotics",
